@@ -146,6 +146,7 @@
                                FontFamily="Montserrat"
                                Margin="0,35,0,0"/>
                     <TextBox x:Name="txtInn"
+                             PreviewTextInput="PreviewTextInput"
                              FontSize="13"
                              FontWeight="Medium"
                              FontFamily="Montserrat"
