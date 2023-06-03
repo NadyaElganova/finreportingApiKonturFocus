@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FinReportsandAnalitics.Views"
         mc:Ignorable="d"
-        Title="InnView" Height="450" Width="800"
+        Title="InnView" Height="550" Width="800"
         WindowStyle="None"
         ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen"
@@ -22,15 +22,15 @@
             Opacity="0.85">
         <Border.BorderBrush>
             <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                <GradientStop Color="#462AD8" Offset="0.85"/>
-                <GradientStop Color="#DA34AE" Offset="0"/>
-                <GradientStop Color="#8A16C1" Offset="1"/>
+                <GradientStop Color="{StaticResource winBorderColor1}" Offset="0.85"/>
+                <GradientStop Color="{StaticResource winBorderColor2}" Offset="0"/>
+                <GradientStop Color="{StaticResource winBorderColor3}" Offset="1"/>
             </LinearGradientBrush>
         </Border.BorderBrush>
         <Border.Background>
             <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
-                <GradientStop Color="#060531" Offset="0"/>
-                <GradientStop Color="#1B1448" Offset="0.75"/>
+                <GradientStop Color="{StaticResource primaryBackColor1}" Offset="0"/>
+                <GradientStop Color="{StaticResource primaryBackColor2}" Offset="0.75"/>
             </LinearGradientBrush>
         </Border.Background>
             <Grid>
@@ -157,7 +157,7 @@
                              Height="28"
                              VerticalContentAlignment="Center"
                              Margin="0,5,0,0"
-                             Padding="25,0,0,0">
+                             Padding="35,0,0,0">
                         <TextBox.Background>
                             <ImageBrush ImageSource="/Images/id-resize.png"
                                         Stretch="None"                                       
