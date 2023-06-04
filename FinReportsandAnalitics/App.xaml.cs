@@ -1,8 +1,12 @@
-﻿using FinReportsandAnalitics.Models;
+﻿using FinReportsandAnalitics.Data;
+using FinReportsandAnalitics.Models;
 using FinReportsandAnalitics.Services;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Infrastructure.Internal;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using System.Configuration;
 using System.IO;
 using System.Reflection;
 using System.Windows;
@@ -53,7 +57,7 @@ namespace FinReportsandAnalitics
                 services.AddScoped<ViewModels.DataViewModel>();
                 services.AddScoped<Views.Pages.SettingsPage>();
                 services.AddScoped<ViewModels.SettingsViewModel>();
-
+                services.AddDbContext<AppDbContext>(options => options.UseSqlServer(@"Data Source=.\SQLEXPRESS;Initial Catalog=FinAnaliz;Integrated Security=true;TrustServerCertificate=true"));
                 // Configuration
                 services.Configure<AppConfig>(context.Configuration.GetSection(nameof(AppConfig)));
             }).Build();
