@@ -16,6 +16,7 @@ using Wpf.Ui.Mvvm.Services;
 
 namespace FinReportsandAnalitics
 {
+
     /// <summary>
     /// Interaction logic for App.xaml
     /// </summary>
