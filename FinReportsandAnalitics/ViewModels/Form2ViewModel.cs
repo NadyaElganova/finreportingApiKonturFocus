@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace FinReportsandAnalitics.ViewModels
 {
-    public class HomeViewModel:ViewModelBase
+   public class Form2ViewModel:ViewModelBase
     {
-
+         
     }
 }

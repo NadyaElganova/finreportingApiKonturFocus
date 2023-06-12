@@ -8,6 +8,6 @@ namespace FinReportsandAnalitics.ViewModels
 {
     public class Form1ViewModel:ViewModelBase
     {
-
+         
     }
 }
