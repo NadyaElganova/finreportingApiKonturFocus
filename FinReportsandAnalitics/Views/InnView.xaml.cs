@@ -50,6 +50,7 @@ namespace FinReportsandAnalitics.Views
         {
            //здесь вся логика с апи ключом и вытягиванием информации из контура
            //если все успешно, то открывается главная форма
+   
            MyMainView myMainView = new MyMainView();
             myMainView.Show();
             

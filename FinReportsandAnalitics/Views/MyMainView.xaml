@@ -3,15 +3,17 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-       xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
+        xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
+        xmlns:vm="clr-namespace:FinReportsandAnalitics.ViewModels"
         mc:Ignorable="d"
         Title="MyMainView" Height="700" Width="1300"
         WindowStartupLocation="CenterScreen"
         WindowStyle="None"
         Background="Transparent"
         AllowsTransparency="True">
-
-
+    <Window.DataContext>
+        <vm:MyMainViewModel x:Name="ReportingVM"></vm:MyMainViewModel>
+    </Window.DataContext>
     <Border CornerRadius="30"
             BorderThickness="2">
         <Border.BorderBrush>
@@ -54,14 +56,14 @@
                                    VerticalAlignment="Center"
                                    Margin="10,10,0,0"/>
                     </StackPanel>
-                    
+
                     <!--Menu Buttons-->
                     <RadioButton Style="{StaticResource menuButton}"
                                  Tag="{StaticResource color1}">
                         <StackPanel Orientation="Horizontal">
                             <fa:IconImage Icon="Home" Style="{StaticResource menuButtonIcon}"/>
                             <TextBlock Text="Домашняя" Style="{StaticResource menuButtonText}"/>
-                        </StackPanel>                        
+                        </StackPanel>
                     </RadioButton>
                     <RadioButton Style="{StaticResource menuButton}"
                                  Tag="{StaticResource color2}">
@@ -106,11 +108,17 @@
                         </StackPanel>
                     </RadioButton>
 
-
+                    <Button Height="25"
+                            Width="100"
+                            Command="{Binding GetBuhFormsCommand}"
+                            >
+                        Тест
+                    </Button>
+                    
                 </StackPanel>
-                
+
             </Border>
-            
+
             <!--Main section-->
             <Border CornerRadius="0,30,30,0"
                     Grid.Column="1">
@@ -120,7 +128,7 @@
                         <GradientStop Color="{StaticResource primaryBackColor2}" Offset="1"/>
                     </LinearGradientBrush>
                 </Border.Background>
-                
+
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="35"/>
@@ -149,9 +157,9 @@
                                 Style="{StaticResource controlButton}"
                                 Tag="{StaticResource color6}"
                                 Click="btnMaximize_Click">
-                                <fa:IconImage Icon="Square" Style="{StaticResource controlButtonIcon}"/>
+                            <fa:IconImage Icon="Square" Style="{StaticResource controlButtonIcon}"/>
                         </Button>
-                        
+
                         <Button x:Name="btnMinimize"
                                 Margin="0,10,0,0"                               
                                 Style="{StaticResource controlButton}"
@@ -159,7 +167,7 @@
                                 Click="btnMinimize_Click">
                             <fa:IconImage Icon="WindowMinimize" Width="12" Style="{StaticResource controlButtonIcon}"/>
                         </Button>
-                        
+
                     </StackPanel>
 
                     <Grid Grid.Row="1">
@@ -167,7 +175,7 @@
                             <ColumnDefinition/>
                             <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
-                        
+
                         <StackPanel Grid.Column="0"
                                     Orientation="Horizontal"
                                     VerticalAlignment="Center">
@@ -224,20 +232,47 @@
 
 
                         </StackPanel>
-                        
+
                     </Grid>
 
                     <ContentControl Content=""
                                     Grid.Row="2"
                                     Margin="25"
                                     />
-
+                    
+                    <DataGrid   HorizontalGridLinesBrush="DarkGray"
+                                RowBackground="LightGray"
+                                AlternatingRowBackground="White" 
+                                Margin="25,51,25,10"
+                                Height="600"
+                                ItemsSource="{Binding OrganizationDatas[0].BuhForms}" 
+                                AutoGenerateColumns="False" 
+                                Grid.RowSpan="2" 
+                                Grid.Row="1">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Год" Binding="{Binding Year}" />
+                            <DataGridTemplateColumn Header="Форма1">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <DataGrid ItemsSource="{Binding Form1}" AutoGenerateColumns="False">
+                                            <DataGrid.Columns>
+                                                <DataGridTextColumn Header="Код" Binding="{Binding Code}"/>
+                                                <DataGridTextColumn Header="Наименование" Binding="{Binding Name}"/>
+                                                <DataGridTextColumn Header="На начало года" Binding="{Binding StartValue}"/>
+                                                <DataGridTextColumn Header="На конец года" Binding="{Binding EndValue}"/>
+                                            </DataGrid.Columns>
+                                        </DataGrid>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
                 </Grid>
                 
             </Border>
 
         </Grid>
-        
+
     </Border>
 
 </Window>
