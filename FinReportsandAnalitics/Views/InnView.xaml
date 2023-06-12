@@ -17,6 +17,7 @@
             <ImageBrush ImageSource="/Images/back-images.jpg"
                         Stretch="UniformToFill"/>
         </Border.Background>
+        
     <Border CornerRadius="30"
             BorderThickness="2"
             Opacity="0.85">

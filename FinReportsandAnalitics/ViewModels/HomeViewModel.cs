@@ -8,5 +8,6 @@ namespace FinReportsandAnalitics.ViewModels
 {
     public class HomeViewModel:ViewModelBase
     {
+
     }
 }

@@ -136,6 +136,7 @@
                 
             </Border>
             
+            
             <!--Main section-->
             <Border CornerRadius="0,30,30,0"
                     Grid.Column="1">

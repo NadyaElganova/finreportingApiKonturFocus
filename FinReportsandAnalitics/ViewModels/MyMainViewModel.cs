@@ -94,6 +94,7 @@ namespace FinReportsandAnalitics.ViewModels
             CurrentChildView = new HomeViewModel();
             Caption = "Домашняя";
             Icon = IconChar.Home;
+
         }
     }
 }

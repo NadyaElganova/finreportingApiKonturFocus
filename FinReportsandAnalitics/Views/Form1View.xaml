@@ -76,6 +76,7 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
+            
             <TextBlock Grid.Column="2"                           
                              Text="год"   
                              FontSize="13"

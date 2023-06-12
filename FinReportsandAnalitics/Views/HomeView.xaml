@@ -9,4 +9,5 @@
     <Grid>
         <Image Source="/Images/home.jpg"/>
     </Grid>
+    
 </UserControl>

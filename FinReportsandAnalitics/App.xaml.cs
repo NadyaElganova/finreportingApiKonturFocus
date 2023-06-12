@@ -13,6 +13,7 @@ using Wpf.Ui.Mvvm.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure.Internal;
 
+
 namespace FinReportsandAnalitics
 {
 
