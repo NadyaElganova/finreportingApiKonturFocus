@@ -110,7 +110,7 @@ namespace FinReportsandAnalitics.ViewModels
 
         private void ExecuteShowForm2ViewCommand(object obj)
         {
-            CurrentChildView = new Form2ViewModel();
+            CurrentChildView = new Form2ViewModel(Organization);
             Caption = "Форма 2";
             Icon = IconChar.FileText;
         }

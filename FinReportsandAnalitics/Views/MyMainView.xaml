@@ -1,4 +1,4 @@
-﻿<Window x:Class="FinReportsandAnalitics.Views.MyMainView"
+<Window x:Class="FinReportsandAnalitics.Views.MyMainView"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -118,8 +118,6 @@
                                     </Style>
                                 </Button.Style>
 
-
-
                             </Button>
                         </StackPanel>
                     </RadioButton>
@@ -129,6 +127,32 @@
                         <StackPanel Orientation="Horizontal">
                             <fa:IconImage Icon="FileText" Style="{StaticResource menuButtonIcon}"/>
                             <TextBlock Text="Форма 2" Style="{StaticResource menuButtonText}"/>
+
+
+                            <Button Margin="15,0,0,0" 
+                                    Width="100"
+                                    Click="Button_Click_1"
+                                    
+                                    >
+                                <TextBlock Text="--> показать" Style="{StaticResource menuButtonText}"/>
+
+                                <Button.Style>
+                                    <Style TargetType="Button">
+                                        <Setter Property="Background" Value="#3914AF"/>
+                                        <Style.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter Property="Background" Value="#866FD7"/>
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Button.Style>
+                            </Button>
+
+
+
+
+
+
                         </StackPanel>
                     </RadioButton>
                     <RadioButton Style="{StaticResource menuButton}"

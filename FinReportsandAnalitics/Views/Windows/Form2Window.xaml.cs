@@ -1,4 +1,4 @@
-using FinReportsandAnalitics.Models;
+﻿using FinReportsandAnalitics.Models;
 using FinReportsandAnalitics.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -17,19 +17,19 @@ using System.Windows.Shapes;
 namespace FinReportsandAnalitics.Views.Windows
 {
     /// <summary>
-    /// Логика взаимодействия для Form1Window.xaml
+    /// Логика взаимодействия для Form2Window.xaml
     /// </summary>
-    public partial class Form1Window : Window
+    public partial class Form2Window : Window
     {
-        public Form1Window(List<OrganizationData> organizations)
+        public Form2Window(List<OrganizationData> organizations)
         {
+
             InitializeComponent();
-            var viewModel = new Form1ViewModel(organizations);
+            var viewModel = new Form2ViewModel(organizations);
 
             // Установка DataContext для окна на экземпляр ViewModel
-            // Установка DataContext для окна на экземпляр ViewModel
-
             DataContext = viewModel;
+
 
         }
     }
