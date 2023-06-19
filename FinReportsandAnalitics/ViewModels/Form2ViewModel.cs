@@ -52,6 +52,13 @@ namespace FinReportsandAnalitics.ViewModels
 
         }
 
+        public Form2ViewModel()
+        {
+        
+
+        }
+
+
 
 
     }

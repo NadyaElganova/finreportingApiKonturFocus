@@ -43,8 +43,7 @@ namespace FinReportsandAnalitics.ViewModels
             }
         }
 
-        private BalanceRepot _BalanceRepot = new BalanceRepot();
-       
+            
         public ObservableCollection<BalanceRepot> BalanceReports
         {
             get
@@ -75,10 +74,8 @@ namespace FinReportsandAnalitics.ViewModels
         {
             BalanceReports = new ObservableCollection<BalanceRepot>();
 
-            _finResultReports= new ObservableCollection<FinResultReport>();
-            BalanceReports = _BalanceRepot.BuildBalanse(organizations);
-
-            FinResultReports = _FinResultReport.BuildFinResultReport(organizations);
+                  
+         
 
             BalanceReports = _BalanceRepot.BuildBalanse(organizations);
 
