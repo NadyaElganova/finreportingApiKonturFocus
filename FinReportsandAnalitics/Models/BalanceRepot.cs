@@ -184,8 +184,7 @@ namespace FinReportsandAnalitics.Models
             CurrentReports.Add(BRLast);
 
             BalanceRepot BrPreLast = new BalanceRepot();
-            Company = "Тестовая";
-
+           
 
             BrPreLast.DateOfBalanse = new DateTime(organizationDatas[0].BuhForms[count - 2].Year, 12, 31);
 
@@ -311,6 +310,131 @@ namespace FinReportsandAnalitics.Models
 
             CurrentReports.Add(BrPreLast);
 
+            BalanceRepot BrPrePreLast = new BalanceRepot();
+
+            BrPrePreLast.DateOfBalanse = new DateTime(organizationDatas[0].BuhForms[count - 3].Year, 12, 31);
+
+            foreach (Row row in organizationDatas[0].BuhForms[count - 3].Form1)
+            {
+
+
+                switch (row.Code)
+                {
+                    case 1110:
+                        BrPrePreLast._1110 = row.EndValue;
+                        break;
+                    case 1120:
+                        BrPrePreLast._1120 = row.EndValue;
+                        break;
+                    case 1130:
+                        BrPrePreLast._1130 = row.EndValue;
+                        break;
+                    case 1140:
+                        BrPrePreLast._1140 = row.EndValue;
+                        break;
+                    case 1150:
+                        BrPrePreLast._1150 = row.EndValue;
+                        break;
+                    case 1160:
+                        BrPrePreLast._1160 = row.EndValue;
+                        break;
+                    case 1170:
+                        BrPrePreLast._1170 = row.EndValue;
+                        break;
+                    case 1180:
+                        BrPrePreLast._1180 = row.EndValue;
+                        break;
+                    case 1190:
+                        BrPrePreLast._1190 = row.EndValue;
+                        break;
+                    case 1100:
+                        BrPrePreLast._1100 = row.EndValue;
+                        break;
+                    case 1210:
+                        BrPrePreLast._1210 = row.EndValue;
+                        break;
+                    case 1220:
+                        BrPrePreLast._1220 = row.EndValue;
+                        break;
+                    case 1230:
+                        BrPrePreLast._1230 = row.EndValue;
+                        break;
+                    case 1240:
+                        BrPrePreLast._1240 = row.EndValue;
+                        break;
+                    case 1250:
+                        BrPrePreLast._1250 = row.EndValue;
+                        break;
+                    case 1260:
+                        BrPrePreLast._1260 = row.EndValue;
+                        break;
+                    case 1200:
+                        BrPrePreLast._1200 = row.EndValue;
+                        break;
+                    case 1600:
+                        BrPrePreLast._1600 = row.EndValue;
+                        break;
+                    case 1310:
+                        BrPrePreLast._1310 = row.EndValue;
+                        break;
+                    case 1320:
+                        BrPrePreLast._1320 = row.EndValue;
+                        break;
+                    case 1340:
+                        BrPrePreLast._1340 = row.EndValue;
+                        break;
+                    case 1350:
+                        BrPrePreLast._1350 = row.EndValue;
+                        break;
+                    case 1360:
+                        BrPrePreLast._1360 = row.EndValue;
+                        break;
+                    case 1370:
+                        BrPrePreLast._1370 = row.EndValue;
+                        break;
+                    case 1300:
+                        BrPrePreLast._1300 = row.EndValue;
+                        break;
+                    case 1410:
+                        BrPrePreLast._1410 = row.EndValue;
+                        break;
+                    case 1420:
+                        BrPrePreLast._1420 = row.EndValue;
+                        break;
+                    case 1430:
+                        BrPrePreLast._1430 = row.EndValue;
+                        break;
+                    case 1450:
+                        BrPrePreLast._1450 = row.EndValue;
+                        break;
+                    case 1400:
+                        BrPrePreLast._1400 = row.EndValue;
+                        break;
+                    case 1510:
+                        BrPrePreLast._1510 = row.EndValue;
+                        break;
+                    case 1520:
+                        BrPrePreLast._1520 = row.EndValue;
+                        break;
+                    case 1530:
+                        BrPrePreLast._1530 = row.EndValue;
+                        break;
+                    case 1540:
+                        BrPrePreLast._1540 = row.EndValue;
+                        break;
+                    case 1550:
+                        BrPrePreLast._1550 = row.EndValue;
+                        break;
+                    case 1500:
+                        BrPrePreLast._1500 = row.EndValue;
+                        break;
+                    case 1700:
+                        BrPrePreLast._1700 = row.EndValue;
+                        break;
+                }
+            }
+
+            CurrentReports.Add(BrPrePreLast);
 
 
 

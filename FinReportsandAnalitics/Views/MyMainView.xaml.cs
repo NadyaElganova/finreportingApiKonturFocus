@@ -82,5 +82,14 @@ namespace FinReportsandAnalitics.Views
             Form1Window form1Window = new Form1Window(_Organization);
             form1Window.Show();
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+
+            Form2Window form2Window = new Form2Window(_Organization);
+            form2Window.Show();
+
+
+        }
     }
 }

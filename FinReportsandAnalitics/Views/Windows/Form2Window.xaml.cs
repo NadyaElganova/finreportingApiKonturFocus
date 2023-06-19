@@ -17,17 +17,19 @@ using System.Windows.Shapes;
 namespace FinReportsandAnalitics.Views.Windows
 {
     /// <summary>
-    /// Логика взаимодействия для Form1Window.xaml
+    /// Логика взаимодействия для Form2Window.xaml
     /// </summary>
-    public partial class Form1Window : Window
+    public partial class Form2Window : Window
     {
-        public Form1Window(List<OrganizationData> organizations)
+        public Form2Window(List<OrganizationData> organizations)
         {
-            InitializeComponent();
-            var viewModel = new Form1ViewModel(organizations);
 
-           // Установка DataContext для окна на экземпляр ViewModel
+            InitializeComponent();
+            var viewModel = new Form2ViewModel(organizations);
+
+            // Установка DataContext для окна на экземпляр ViewModel
             DataContext = viewModel;
+
 
         }
     }
