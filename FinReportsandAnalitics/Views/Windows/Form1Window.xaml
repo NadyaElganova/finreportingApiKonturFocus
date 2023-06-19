@@ -368,12 +368,78 @@
 
 
 
+                <!-- 2020 год -->
 
+                <StackPanel  Grid.Column="4" Margin="0,0,0,0" Grid.Row="2">
+                    <TextBlock 
+                        Text="Год:" 
+                        FontWeight="Bold"                       
+                        />
+                    <TextBlock 
+                        Text="{Binding BalanceReports[2].DateOfBalanse}" 
+                        FontWeight="Bold"   
+                          Height="18"                  
+                        />
+                </StackPanel>
 
+                <StackPanel Grid.Column="4" Grid.Row="3" Margin="0,0,0,0" Grid.RowSpan="2">
+                    <TextBox  Background="Beige" Height="15.96"  Text="{Binding BalanceReports[2]._1110, StringFormat={}{0:n0}}"/>
+                    <TextBox  Background="Beige" Height="15.96" Text="{Binding BalanceReports[2]._1120, StringFormat={}{0:n0}}"/>
+                    <TextBox  Background="Beige" Height="15.96" Text="{Binding BalanceReports[2]._1130, StringFormat={}{0:n0}}"/>
+                    <TextBox  Background="Beige" Height="15.96" Text="{Binding BalanceReports[2]._1140, StringFormat={}{0:n0}}"/>
+                    <TextBox  Background="Beige" Height="15.96" Text="{Binding BalanceReports[2]._1150, StringFormat={}{0:n0}}"/>
+                    <TextBox  Background="Beige" Height="15.96" Text="{Binding BalanceReports[2]._1160, StringFormat={}{0:n0}}"/>
+                    <TextBox  Background="Beige" Height="15.96" Text="{Binding BalanceReports[2]._1170, StringFormat={}{0:n0}}"/>
+                    <TextBox  Background="Beige" Height="15.96" Text="{Binding BalanceReports[2]._1180, StringFormat={}{0:n0}}"/>
+                    <TextBox  Background="Beige" Height="15.96" Text="{Binding BalanceReports[2]._1190, StringFormat={}{0:n0}}"/>
+                    <TextBox  Background="Beige" Height="15.96" Text="{Binding BalanceReports[2]._1100, StringFormat={}{0:n0}}"/>
+                </StackPanel>
+                <StackPanel Grid.Column="4" Grid.Row="4" Margin="0,0,0,0">
+                    <TextBlock 
+                        Text="--------" 
+                        FontWeight="Bold"                     
+                        />
+                </StackPanel>
+                <StackPanel Grid.Column="4" Grid.Row="5" Margin="0,0,0,0">
+                    <TextBox  Background="Beige" Height="15.96"  Text="{Binding BalanceReports[2]._1210, StringFormat={}{0:n0}}"/>
+                    <TextBox  Background="Beige" Height="15.96" Text="{Binding BalanceReports[2]._1220, StringFormat={}{0:n0}}"/>
+                    <TextBox  Background="Beige" Height="15.96" Text="{Binding BalanceReports[2]._1230, StringFormat={}{0:n0}}"/>
+                    <TextBox  Background="Beige" Height="15.96" Text="{Binding BalanceReports[2]._1240, StringFormat={}{0:n0}}"/>
+                    <TextBox  Background="Beige" Height="15.96" Text="{Binding BalanceReports[2]._1250, StringFormat={}{0:n0}}"/>
+                    <TextBox  Background="Beige" Height="15.96" Text="{Binding BalanceReports[2]._1260, StringFormat={}{0:n0}}"/>
+                    <TextBox  Background="Beige" Height="15.96" Text="{Binding BalanceReports[2]._1200, StringFormat={}{0:n0}}"/>
+                    <TextBox  Background="Beige" Height="15.96" Text="{Binding BalanceReports[2]._1600, StringFormat={}{0:n0}}"/>
+                </StackPanel>
 
+                <StackPanel Grid.Column="4" Grid.Row="6">
+                    <TextBlock Text="-----------" FontWeight="Bold" />
+                    <TextBox  Background="Beige" Height="15.96"  Text="{Binding BalanceReports[2]._1310, StringFormat={}{0:n0}}"/>
+                    <TextBox  Background="Beige" Height="15.96" Text="{Binding BalanceReports[2]._1320, StringFormat={}{0:n0}}"/>
+                    <TextBox  Background="Beige" Height="15.96" Text="{Binding BalanceReports[2]._1340, StringFormat={}{0:n0}}"/>
+                    <TextBox  Background="Beige" Height="15.96" Text="{Binding BalanceReports[2]._1350, StringFormat={}{0:n0}}"/>
+                    <TextBox  Background="Beige" Height="15.96" Text="{Binding BalanceReports[2]._1360, StringFormat={}{0:n0}}"/>
+                    <TextBox  Background="Beige" Height="15.96" Text="{Binding BalanceReports[2]._1370, StringFormat={}{0:n0}}"/>
+                    <TextBox  Background="Beige" Height="15.96" Text="{Binding BalanceReports[2]._1300, StringFormat={}{0:n0}}"/>
+                </StackPanel>
+                <StackPanel Grid.Column="4" Grid.Row="7">
+                    <TextBlock Text="-----------" FontWeight="Bold" />
+                    <TextBox  Background="Beige" Height="15.96"  Text="{Binding BalanceReports[2]._1410, StringFormat={}{0:n0}}"/>
+                    <TextBox  Background="Beige" Height="15.96" Text="{Binding BalanceReports[2]._1420, StringFormat={}{0:n0}}"/>
+                    <TextBox  Background="Beige" Height="15.96" Text="{Binding BalanceReports[2]._1430, StringFormat={}{0:n0}}"/>
+                    <TextBox  Background="Beige" Height="15.96" Text="{Binding BalanceReports[2]._1450, StringFormat={}{0:n0}}"/>
+                    <TextBox  Background="Beige" Height="15.96" Text="{Binding BalanceReports[2]._1400, StringFormat={}{0:n0}}"/>
+                </StackPanel>
 
-
-
+                <StackPanel Grid.Column="4" Grid.Row="8">
+                    <TextBlock Text="-----------" FontWeight="Bold" />
+                    <TextBox  Background="Beige" Height="15.96"  Text="{Binding BalanceReports[2]._1510, StringFormat={}{0:n0}}"/>
+                    <TextBox  Background="Beige" Height="15.96" Text="{Binding BalanceReports[2]._1520, StringFormat={}{0:n0}}"/>
+                    <TextBox  Background="Beige" Height="15.96" Text="{Binding BalanceReports[2]._1530, StringFormat={}{0:n0}}"/>
+                    <TextBox  Background="Beige" Height="15.96" Text="{Binding BalanceReports[2]._1540, StringFormat={}{0:n0}}"/>
+                    <TextBox  Background="Beige" Height="15.96" Text="{Binding BalanceReports[2]._1550, StringFormat={}{0:n0}}"/>
+                    <TextBox  Background="Beige" Height="15.96" Text="{Binding BalanceReports[2]._1500, StringFormat={}{0:n0}}"/>
+                    <TextBox  Background="Beige" Height="15.96" Text="{Binding BalanceReports[2]._1700, StringFormat={}{0:n0}}"/>
+                </StackPanel>
 
 
 
