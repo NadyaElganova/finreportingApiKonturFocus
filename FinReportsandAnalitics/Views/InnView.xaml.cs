@@ -1,4 +1,6 @@
-﻿using FinReportsandAnalitics.Views.Windows;
+﻿using FinReportsandAnalitics.Services;
+using FinReportsandAnalitics.Views.Windows;
+using FinReportsandAnalitics.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,6 +29,9 @@ namespace FinReportsandAnalitics.Views
         {
             InitializeComponent();
         }
+             
+    
+         
 
         private void Windows_MouseDown(object sender, MouseButtonEventArgs e)
         {
@@ -46,13 +51,15 @@ namespace FinReportsandAnalitics.Views
             Application.Current.Shutdown();
         }
 
-        private void btnInn_Click(object sender, RoutedEventArgs e)
+        private async void btnInn_Click(object sender, RoutedEventArgs e)
         {
            //здесь вся логика с апи ключом и вытягиванием информации из контура
            //если все успешно, то открывается главная форма
-   
-           MyMainView myMainView = new MyMainView();
+           KonturSendReciever_ sendReciever = new KonturSendReciever_();
+            var a = await KonturSendReciever_.GetRequestBuhFormsAsync(txtInn.Text);
+           MyMainView myMainView = new MyMainView(a);
             myMainView.Show();
+            
             
         }
 

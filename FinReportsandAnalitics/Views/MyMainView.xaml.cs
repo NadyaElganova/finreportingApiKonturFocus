@@ -1,4 +1,7 @@
-﻿using System;
+using FinReportsandAnalitics.Models;
+using FinReportsandAnalitics.ViewModels;
+using FinReportsandAnalitics.Views.Windows;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -21,11 +24,24 @@ namespace FinReportsandAnalitics.Views
     /// Логика взаимодействия для MyMainView.xaml
     /// </summary>
     public partial class MyMainView : Window
+
     {
-        public MyMainView()
+        List<OrganizationData> _Organization;
+        public MyMainView(List<OrganizationData> Organization)
         {
             InitializeComponent();
-            
+            var viewModel = new MyMainViewModel();
+            _Organization = new List<OrganizationData>();
+
+            _Organization = Organization;
+
+            // Присвоение значения переданного списка свойству OrganizationList в ViewModel
+            viewModel.Organization = Organization;
+
+            // Установка DataContext для окна на экземпляр ViewModel
+            DataContext = viewModel;
+
+
         }
         [DllImport("user32.dll")]
         public static extern IntPtr SendMessage(IntPtr hWnd, int wMsg, int wParam, int lParam);
@@ -59,5 +75,23 @@ namespace FinReportsandAnalitics.Views
             }
             else this.WindowState= WindowState.Normal;              
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            
+            Form1Window form1Window = new Form1Window(_Organization);
+            form1Window.Show();
+        }
+
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+
+            Form2Window form2Window = new Form2Window(_Organization);
+            form2Window.Show();
+
+
+        }
+
     }
 }

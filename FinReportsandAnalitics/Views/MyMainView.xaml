@@ -1,19 +1,38 @@
-﻿<Window x:Class="FinReportsandAnalitics.Views.MyMainView"
+<Window x:Class="FinReportsandAnalitics.Views.MyMainView"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
-        xmlns:vm="clr-namespace:FinReportsandAnalitics.ViewModels"
+        xmlns:viewModel="clr-namespace:FinReportsandAnalitics.ViewModels"
+        xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp" xmlns:local="clr-namespace:FinReportsandAnalitics.Views"
         mc:Ignorable="d"
         Title="MyMainView" Height="700" Width="1300"
         WindowStartupLocation="CenterScreen"
         WindowStyle="None"
         Background="Transparent"
         AllowsTransparency="True">
+
     <Window.DataContext>
-        <vm:MyMainViewModel x:Name="ReportingVM"></vm:MyMainViewModel>
+        <viewModel:MyMainViewModel/>
     </Window.DataContext>
+
+    <Window.Resources>
+
+        <DataTemplate DataType="{x:Type viewModel:HomeViewModel}">
+            <local:HomeView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModel:SearchViewModel}">
+            <local:SearchView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModel:Form1ViewModel}">
+            <!--<local:Form1View/>-->
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModel:Form2ViewModel}">
+            <local:Form2View/>
+        </DataTemplate>
+
+    </Window.Resources>
+
     <Border CornerRadius="30"
             BorderThickness="2">
         <Border.BorderBrush>
@@ -59,31 +78,81 @@
 
                     <!--Menu Buttons-->
                     <RadioButton Style="{StaticResource menuButton}"
-                                 Tag="{StaticResource color1}">
+                                 Tag="{StaticResource color1}"
+                                 Command="{Binding ShowHomeViewCommand}">
                         <StackPanel Orientation="Horizontal">
                             <fa:IconImage Icon="Home" Style="{StaticResource menuButtonIcon}"/>
                             <TextBlock Text="Домашняя" Style="{StaticResource menuButtonText}"/>
                         </StackPanel>
                     </RadioButton>
                     <RadioButton Style="{StaticResource menuButton}"
-                                 Tag="{StaticResource color2}">
+                                 Tag="{StaticResource color2}"
+                                 Command="{Binding ShowSearchViewCommand}">
                         <StackPanel Orientation="Horizontal">
                             <fa:IconImage Icon="Search" Style="{StaticResource menuButtonIcon}"/>
                             <TextBlock Text="История поиска" Style="{StaticResource menuButtonText}"/>
                         </StackPanel>
                     </RadioButton>
                     <RadioButton Style="{StaticResource menuButton}"
-                                 Tag="{StaticResource color6}">
+                                 Tag="{StaticResource color6}"
+                                 Command="{Binding ShowForm1ViewCommand}">
                         <StackPanel Orientation="Horizontal">
                             <fa:IconImage Icon="FileText" Style="{StaticResource menuButtonIcon}"/>
                             <TextBlock Text="Форма 1" Style="{StaticResource menuButtonText}"/>
+                           
+                            <Button Margin="15,0,0,0" 
+                                    Width="100"
+                                    Click="Button_Click"
+                                    
+                                    >
+                                <TextBlock Text="--> показать" Style="{StaticResource menuButtonText}"/>
+
+                                <Button.Style>
+                                    <Style TargetType="Button">
+                                        <Setter Property="Background" Value="#3914AF"/>
+                                        <Style.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter Property="Background" Value="#866FD7"/>
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Button.Style>
+
+                            </Button>
                         </StackPanel>
                     </RadioButton>
                     <RadioButton Style="{StaticResource menuButton}"
-                                 Tag="{StaticResource color8}">
+                                 Tag="{StaticResource color8}"
+                                 Command="{Binding ShowForm2ViewCommand}">
                         <StackPanel Orientation="Horizontal">
                             <fa:IconImage Icon="FileText" Style="{StaticResource menuButtonIcon}"/>
                             <TextBlock Text="Форма 2" Style="{StaticResource menuButtonText}"/>
+
+
+                            <Button Margin="15,0,0,0" 
+                                    Width="100"
+                                    Click="Button_Click_1"
+                                    
+                                    >
+                                <TextBlock Text="--> показать" Style="{StaticResource menuButtonText}"/>
+
+                                <Button.Style>
+                                    <Style TargetType="Button">
+                                        <Setter Property="Background" Value="#3914AF"/>
+                                        <Style.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter Property="Background" Value="#866FD7"/>
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Button.Style>
+                            </Button>
+
+
+
+
+
+
                         </StackPanel>
                     </RadioButton>
                     <RadioButton Style="{StaticResource menuButton}"
@@ -107,6 +176,10 @@
                             <TextBlock Text="Настройки" Style="{StaticResource menuButtonText}"/>
                         </StackPanel>
                     </RadioButton>
+                    <TextBlock x:Name="innUnvisible"
+                               Text="{Binding Inn, Mode=TwoWay}">
+                        
+                    </TextBlock>
 
                     <Button Height="25"
                             Width="100"
@@ -118,7 +191,8 @@
                 </StackPanel>
 
             </Border>
-
+            
+            
             <!--Main section-->
             <Border CornerRadius="0,30,30,0"
                     Grid.Column="1">
@@ -179,12 +253,12 @@
                         <StackPanel Grid.Column="0"
                                     Orientation="Horizontal"
                                     VerticalAlignment="Center">
-                            <fa:IconImage Icon="Home"
+                            <fa:IconImage Icon="{Binding Icon}"
                                           Height="20"
                                           Width="20"
                                           Foreground="{StaticResource titleColor2}"
                                           Margin="35,0,10,0"/>
-                            <TextBlock Text="Домашняя"
+                            <TextBlock Text="{Binding Caption}"
                                        Foreground="{StaticResource titleColor2}"
                                        FontSize="16"
                                        FontWeight="Medium"
@@ -235,7 +309,7 @@
 
                     </Grid>
 
-                    <ContentControl Content=""
+                    <ContentControl Content="{Binding CurrentChildView}"
                                     Grid.Row="2"
                                     Margin="25"
                                     />
