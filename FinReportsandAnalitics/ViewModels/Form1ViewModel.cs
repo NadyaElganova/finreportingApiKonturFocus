@@ -42,8 +42,6 @@ namespace FinReportsandAnalitics.ViewModels
                 OnPropertyChanged(nameof(_finResultReports));
             }
         }
-
-        private BalanceRepot _BalanceRepot = new BalanceRepot();
        
         public ObservableCollection<BalanceRepot> BalanceReports
         {
@@ -76,7 +74,6 @@ namespace FinReportsandAnalitics.ViewModels
             BalanceReports = new ObservableCollection<BalanceRepot>();
 
             _finResultReports= new ObservableCollection<FinResultReport>();
-            BalanceReports = _BalanceRepot.BuildBalanse(organizations);
 
             FinResultReports = _FinResultReport.BuildFinResultReport(organizations);
 
