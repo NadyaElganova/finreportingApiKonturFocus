@@ -1,6 +1,7 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.ComponentModel;
 using FinReportsandAnalitics.Models;
 using Microsoft.EntityFrameworkCore.Query.Internal;
+
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -20,6 +21,7 @@ namespace FinReportsandAnalitics.ViewModels
         private ObservableCollection<string> _names;
 
         private ObservableCollection<BalanceRepot> _balanceRepots;
+
 
         private ObservableCollection<FinResultReport> _finResultReports;
 
@@ -41,7 +43,8 @@ namespace FinReportsandAnalitics.ViewModels
             }
         }
 
-
+        private BalanceRepot _BalanceRepot = new BalanceRepot();
+       
         public ObservableCollection<BalanceRepot> BalanceReports
         {
             get
@@ -71,10 +74,13 @@ namespace FinReportsandAnalitics.ViewModels
         public Form1ViewModel(List<OrganizationData> organizations)
         {
             BalanceReports = new ObservableCollection<BalanceRepot>();
+
             _finResultReports= new ObservableCollection<FinResultReport>();
             BalanceReports = _BalanceRepot.BuildBalanse(organizations);
 
             FinResultReports = _FinResultReport.BuildFinResultReport(organizations);
+
+            BalanceReports = _BalanceRepot.BuildBalanse(organizations);
 
           //  MessageBox.Show(BalanceReports[0]._1110.ToString());
 

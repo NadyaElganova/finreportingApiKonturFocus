@@ -1,4 +1,4 @@
-﻿using FinReportsandAnalitics.Models;
+using FinReportsandAnalitics.Models;
 using FinReportsandAnalitics.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -26,7 +26,9 @@ namespace FinReportsandAnalitics.Views.Windows
             InitializeComponent();
             var viewModel = new Form1ViewModel(organizations);
 
-           // Установка DataContext для окна на экземпляр ViewModel
+            // Установка DataContext для окна на экземпляр ViewModel
+            // Установка DataContext для окна на экземпляр ViewModel
+
             DataContext = viewModel;
 
         }

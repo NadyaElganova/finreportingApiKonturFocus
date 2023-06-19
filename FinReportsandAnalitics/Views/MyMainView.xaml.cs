@@ -1,4 +1,4 @@
-﻿using FinReportsandAnalitics.Models;
+using FinReportsandAnalitics.Models;
 using FinReportsandAnalitics.ViewModels;
 using FinReportsandAnalitics.Views.Windows;
 using System;
@@ -83,6 +83,7 @@ namespace FinReportsandAnalitics.Views
             form1Window.Show();
         }
 
+
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
 
@@ -91,5 +92,6 @@ namespace FinReportsandAnalitics.Views
 
 
         }
+
     }
 }

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -184,7 +184,8 @@ namespace FinReportsandAnalitics.Models
             CurrentReports.Add(BRLast);
 
             BalanceRepot BrPreLast = new BalanceRepot();
-           
+
+            Company = "Тестовая";
 
             BrPreLast.DateOfBalanse = new DateTime(organizationDatas[0].BuhForms[count - 2].Year, 12, 31);
 
@@ -435,8 +436,6 @@ namespace FinReportsandAnalitics.Models
             }
 
             CurrentReports.Add(BrPrePreLast);
-
-
 
             return CurrentReports;
 
