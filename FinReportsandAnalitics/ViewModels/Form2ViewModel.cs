@@ -5,6 +5,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace FinReportsandAnalitics.ViewModels
 {
@@ -49,7 +50,7 @@ namespace FinReportsandAnalitics.ViewModels
         {       
             _finResultReports = new ObservableCollection<FinResultReport>();     
             FinResultReports = _FinResultReport.BuildFinResultReport(organizations);
-
+            MessageBox.Show(FinResultReports[0]._2421.ToString());
         }
 
         public Form2ViewModel()

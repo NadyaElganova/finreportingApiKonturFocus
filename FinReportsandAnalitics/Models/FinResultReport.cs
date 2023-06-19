@@ -30,7 +30,11 @@ namespace FinReportsandAnalitics.Models
         public long _2410 { get; set; }
         public long _2411 { get; set; }
         public long _2412 { get; set; }
+        public long _2430 { get; set; }
+
+        public long _2421 { get; set; }
         public long _2460 { get; set; }
+        public long _2450 { get; set; }
         public long _2400 { get; set; }
 
 
@@ -112,6 +116,10 @@ namespace FinReportsandAnalitics.Models
                             FRLast._2411 = row.EndValue;
                             break;
 
+                        case 2421:
+                            FRLast._2421 = row.EndValue;
+                            break;
+
                         case 2412:
                             FRLast._2412 = row.EndValue;
                             break;
@@ -120,8 +128,16 @@ namespace FinReportsandAnalitics.Models
                             FRLast._2460 = row.EndValue;
                             break;
 
+                        case 2430:
+                            FRLast._2430 = row.EndValue;
+                            break;
+
                         case 2400:
                             FRLast._2400 = row.EndValue;
+                            break;
+
+                        case 2450:
+                            FRLast._2450 = row.EndValue;
                             break;
 
                     }
@@ -132,7 +148,7 @@ namespace FinReportsandAnalitics.Models
 
             }  
            
-            return null;
+            return CurrentReports;
         }
     }
 }
