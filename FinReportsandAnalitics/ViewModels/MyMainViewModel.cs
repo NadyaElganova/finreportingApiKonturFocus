@@ -1,9 +1,14 @@
-﻿using FontAwesome.Sharp;
+﻿using FinReportsandAnalitics.Models;
+using FinReportsandAnalitics.Services;
+using FinReportsandAnalitics.Views;
+using FontAwesome.Sharp;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 
 namespace FinReportsandAnalitics.ViewModels
@@ -14,8 +19,24 @@ namespace FinReportsandAnalitics.ViewModels
         private ViewModelBase _currentChildView;
         private string _caption;
         private IconChar _icon;
+        private string _inn;
+        private List<OrganizationData> _organization;
+
         //Properties
        
+
+         public List<OrganizationData> Organization
+        {
+            get
+            {
+                return _organization;
+            }
+            set
+            {
+                _organization = value;
+                OnPropertyChanged(nameof(Organization));
+            }
+        }
         public ViewModelBase CurrentChildView
         {
             get
@@ -52,6 +73,20 @@ namespace FinReportsandAnalitics.ViewModels
                 OnPropertyChanged(nameof(Icon));
             }
         }
+
+        public string Inn
+        {
+            get
+            {
+                return _inn;
+            }
+            set
+            {
+                _inn = value;
+                OnPropertyChanged(nameof(Inn));
+            }
+        }
+
         //--> Commands
         public ICommand ShowHomeViewCommand { get; }
         public ICommand ShowSearchViewCommand { get; }
@@ -60,13 +95,17 @@ namespace FinReportsandAnalitics.ViewModels
         public MyMainViewModel()
         {
             //Initialize commands
+            
             ShowHomeViewCommand = new ViewModelCommand(ExecuteShowHomeViewCommand);
             ShowSearchViewCommand = new ViewModelCommand(ExecuteShowSearchViewCommand);
             ShowForm1ViewCommand = new ViewModelCommand(ExecuteShowForm1ViewCommand);
             ShowForm2ViewCommand = new ViewModelCommand(ExecuteShowForm2ViewCommand);
+            
             //Default view
             ExecuteShowHomeViewCommand(null);
             
+
+
         }
 
         private void ExecuteShowForm2ViewCommand(object obj)
@@ -78,7 +117,8 @@ namespace FinReportsandAnalitics.ViewModels
 
         private void ExecuteShowForm1ViewCommand(object obj)
         {
-            CurrentChildView=new Form1ViewModel();
+            
+            CurrentChildView =new Form1ViewModel(Organization);
             Caption = "Форма 1";
             Icon = IconChar.FileText;
         }

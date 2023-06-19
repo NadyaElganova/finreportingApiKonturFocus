@@ -25,7 +25,7 @@
             <local:SearchView/>
         </DataTemplate>
         <DataTemplate DataType="{x:Type viewModel:Form1ViewModel}">
-            <local:Form1View/>
+            <!--<local:Form1View/>-->
         </DataTemplate>
         <DataTemplate DataType="{x:Type viewModel:Form2ViewModel}">
             <local:Form2View/>
@@ -99,6 +99,28 @@
                         <StackPanel Orientation="Horizontal">
                             <fa:IconImage Icon="FileText" Style="{StaticResource menuButtonIcon}"/>
                             <TextBlock Text="Форма 1" Style="{StaticResource menuButtonText}"/>
+                           
+                            <Button Margin="15,0,0,0" 
+                                    Width="100"
+                                    Click="Button_Click"
+                                    
+                                    >
+                                <TextBlock Text="--> показать" Style="{StaticResource menuButtonText}"/>
+
+                                <Button.Style>
+                                    <Style TargetType="Button">
+                                        <Setter Property="Background" Value="#3914AF"/>
+                                        <Style.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter Property="Background" Value="#866FD7"/>
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Button.Style>
+
+
+
+                            </Button>
                         </StackPanel>
                     </RadioButton>
                     <RadioButton Style="{StaticResource menuButton}"
@@ -130,6 +152,10 @@
                             <TextBlock Text="Настройки" Style="{StaticResource menuButtonText}"/>
                         </StackPanel>
                     </RadioButton>
+                    <TextBlock x:Name="innUnvisible"
+                               Text="{Binding Inn, Mode=TwoWay}">
+                        
+                    </TextBlock>
 
 
                 </StackPanel>

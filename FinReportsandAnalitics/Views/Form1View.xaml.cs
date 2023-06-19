@@ -1,4 +1,6 @@
-﻿using System;
+﻿using FinReportsandAnalitics.Models;
+using FinReportsandAnalitics.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +22,24 @@ namespace FinReportsandAnalitics.Views
     /// </summary>
     public partial class Form1View : UserControl
     {
-        public Form1View()
+        public Form1View(List<OrganizationData> Organization)
         {
             InitializeComponent();
+          
+                
+            var viewModel = new Form1ViewModel(Organization);
+
+            
+            
+            // Установка DataContext для окна на экземпляр ViewModel
+           DataContext = viewModel;
+
+
+        }
+
+        private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }
