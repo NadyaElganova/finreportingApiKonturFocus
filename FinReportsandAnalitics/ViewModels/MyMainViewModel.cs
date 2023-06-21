@@ -1,6 +1,8 @@
-﻿using FinReportsandAnalitics.Models;
+﻿using CommunityToolkit.Mvvm.Input;
+using FinReportsandAnalitics.Models;
 using FinReportsandAnalitics.Services;
 using FinReportsandAnalitics.Views;
+using FinReportsandAnalitics.Views.Windows;
 using FontAwesome.Sharp;
 using System;
 using System.Collections.Generic;
@@ -92,6 +94,9 @@ namespace FinReportsandAnalitics.ViewModels
         public ICommand ShowSearchViewCommand { get; }
         public ICommand ShowForm1ViewCommand { get; }
         public ICommand ShowForm2ViewCommand { get; }
+        
+        public ICommand OpenForm1ViewCommand { get; }
+
         public MyMainViewModel()
         {
             //Initialize commands
@@ -99,7 +104,8 @@ namespace FinReportsandAnalitics.ViewModels
             ShowHomeViewCommand = new ViewModelCommand(ExecuteShowHomeViewCommand);
             ShowSearchViewCommand = new ViewModelCommand(ExecuteShowSearchViewCommand);
             ShowForm1ViewCommand = new ViewModelCommand(ExecuteShowForm1ViewCommand);
-            ShowForm2ViewCommand = new ViewModelCommand(ExecuteShowForm2ViewCommand);
+            ShowForm2ViewCommand = new ViewModelCommand(ExecuteShowForm2ViewCommand);            
+            OpenForm1ViewCommand=new ViewModelCommand(ExecuteOpenForm1ViewCommand);
             
             //Default view
             ExecuteShowHomeViewCommand(null);
@@ -107,6 +113,14 @@ namespace FinReportsandAnalitics.ViewModels
 
 
         }
+
+        private void ExecuteOpenForm1ViewCommand(object obj)
+        {
+            Form1Window form1Window = new Form1Window(Organization);
+            form1Window.Show();
+        }
+
+        
 
         private void ExecuteShowForm2ViewCommand(object obj)
         {
@@ -136,5 +150,8 @@ namespace FinReportsandAnalitics.ViewModels
             Icon = IconChar.Home;
 
         }
+
+        
+        
     }
 }

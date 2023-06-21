@@ -6,38 +6,73 @@
              xmlns:local="clr-namespace:FinReportsandAnalitics.Views"
              xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="600" d:DesignWidth="1000">
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
-            <RowDefinition Height="25"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
         <Grid Grid.Row="0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="170"/>
                 <ColumnDefinition Width="120"/>
             </Grid.ColumnDefinitions>
             <StackPanel Orientation="Horizontal"
                         VerticalAlignment="Top"
                         Grid.Column="0">
                 <fa:IconImage Icon="FileText" Height="20" Width="20" Foreground="{StaticResource plainTextColor3}"/>
-                <TextBlock Text="Форма 2"   
-                         FontSize="13"
+                <TextBox Text="Форма 2"   
+                    FontSize="13"
                          Height="24"
-                         Width="300"
-                         Background="Transparent"
-                         FontWeight="Medium"
-                         FontFamily="Montserrat"                            
-                         Foreground="{StaticResource plainTextColor3}"
-                         TextAlignment="Left"
-                         Margin="15,5,0,0"
-                         Padding="5"></TextBlock>
+                           Width="300"
+                           Background="Transparent"
+                             FontWeight="Medium"
+                             FontFamily="Montserrat"                            
+                             Foreground="{StaticResource plainTextColor3}"
+                             CaretBrush="{StaticResource plainTextColor3}"
+                             BorderBrush="{StaticResource plainTextColor3}"
+                             BorderThickness="0,0,0,0"                             
+                             VerticalContentAlignment="Center"
+                             Margin="5,5,0,0"></TextBox>
             </StackPanel>
-            
-            <!--<Button Grid.Column="1"
+            <Button Grid.Column="1"
                             Command="{Binding}"                            
-                            Content="Найти"                            
+                            Content="Отправить на e-mail"                            
+                            FontSize="12"
+                            FontFamily="Montserrat"
+                            Cursor="Hand"
+                            BorderThickness="0"
+                            Foreground="White"
+                            Margin="0,0,15,0"
+                    VerticalAlignment="Top">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#773DFF"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="Button">
+                                    <Border Height="30"
+                                                    CornerRadius="15"
+                                                    Background="{TemplateBinding Background}">
+                                        <ContentPresenter VerticalAlignment="Center"
+                                                                      HorizontalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#836EFB"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+            <Button Grid.Column="2"
+                            Command="{Binding}"                            
+                            Content="Открыть"                            
                             FontSize="12"
                             FontFamily="Montserrat"
                             Cursor="Hand"
@@ -66,73 +101,276 @@
                         </Style.Triggers>
                     </Style>
                 </Button.Style>
-            </Button>-->
-        </Grid>
-        <Grid Grid.Row="1">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-
-            <TextBlock Grid.Column="2"                           
-                             Text="год"   
-                             FontSize="13"
-                             Height="24"
-                             Background="Transparent"
-                             FontWeight="Medium"
-                             FontFamily="Montserrat"                            
-                             Foreground="{StaticResource plainTextColor3}"
-                             TextAlignment="Left"
-                             Padding="5"/>
-            <TextBlock Grid.Column="3"                           
-                             Text="год"   
-                             FontSize="13"
-                             Height="24"
-                             Background="Transparent"
-                             FontWeight="Medium"
-                             FontFamily="Montserrat"                            
-                             Foreground="{StaticResource plainTextColor3}"
-                             TextAlignment="Left"
-                             Padding="5"/>
-            <TextBlock Grid.Column="4"                           
-                             Text="год"   
-                             FontSize="13"
-                             Height="24"
-                             Background="Transparent"
-                             FontWeight="Medium"
-                             FontFamily="Montserrat"                            
-                             Foreground="{StaticResource plainTextColor3}"
-                             TextAlignment="Left"
-                             Padding="5"/>
+            </Button>
 
         </Grid>
-        <Border Grid.Row="2"
+        <Border Grid.Row="1"
                 Background="#200F53"
                 CornerRadius="10" 
-                Padding="10">
-            <DataGrid ColumnWidth="*"
-                  Background="#200F53"
-                  BorderThickness="0">
-                <DataGrid.ColumnHeaderStyle>
-                    <Style TargetType="DataGridColumnHeader">
-                        <Setter Property="Background" Value="Transparent"/>
-                        <Setter Property="Foreground" Value="#BCBEE0"/>
-                        <Setter Property="Padding" Value="10,0,0,10"/>
-                        <Setter Property="FontFamily" Value="Montserrat"/>
-                        <Setter Property="FontSize" Value="15"/>
-                    </Style>
-                </DataGrid.ColumnHeaderStyle>
-                <DataGrid.Columns>
-                    <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Код" HeaderStringFormat=""/>
-                    <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Наименование"/>
-                    <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="На конец года"/>
-                    <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="На конец года"/>
-                    <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="На конец года"/>
-                </DataGrid.Columns>
-            </DataGrid>
+                Padding="10"
+                Width="1000"
+                Height="850">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="380"/>
+                    <ColumnDefinition Width="70" />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="32" />
+                    <RowDefinition Height="38" />
+                    <!--Баланс-->
+                    <RowDefinition Height="32" />
+                    <!--Актив-Основные -->
+                    <RowDefinition Height="300" />
+                    <!--Оснонвые-->
+
+                    <!--Оборотные-->
+
+                    <!--Баланс-->
+                    <RowDefinition Height="138" />
+                    <!--Баланс-->
+                    <RowDefinition Height="105" />
+                    <!--Баланс-->
+                    <RowDefinition Height="130" />
+                    <!--Баланс-->
+                    <RowDefinition Height="108*" />
+                    <!--Баланс-->
+
+
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0" Grid.Column="0"  Margin="0,0,0,9" Foreground="White">
+                   Отчет от фин результатах
+                </TextBlock>
+                <TextBlock Grid.Row="0" Grid.Column="1"
+                           Grid.ColumnSpan="2"
+                           TextAlignment="Right" 
+                           Margin="0,0,0,10"
+                           Foreground="White">
+                   ИНН предприятия:
+                </TextBlock>
+                <TextBlock Grid.Row="0" Grid.Column="3" 
+                           Text="{Binding FinResultReports[0].Company}"
+                           TextAlignment="Left" 
+                           Margin="0,0,0,0"
+                           Foreground="White"/>
+
+
+                <StackPanel  Grid.Column="0" Margin="0,0,0,0" Grid.Row="2">
+                    <TextBlock 
+                        Text="Наименование показателя" 
+                        FontWeight="Bold"                       
+                        Foreground="White"
+                        />
+                    <TextBlock 
+                        Text="" 
+                        FontWeight="Bold"   
+                        Height="18"
+                        Foreground="White"
+                        />
+                </StackPanel>
+
+                <StackPanel Grid.Column="0" Grid.Row="3" Margin="0,0,0,0" Grid.RowSpan="2">
+                    <TextBlock Text="Выручка" Foreground="White"/>
+                    <TextBlock Text="Себестоимоть продаж" Foreground="White"/>
+                    <TextBlock Text="Валовая прибыль (убыток)" Foreground="White"/>
+                    <TextBlock Text="Коммерческие расходы" Foreground="White"/>
+                    <TextBlock Text="Управленческие расходы" Foreground="White"/>
+                    <TextBlock Text="  Прибыль (убыток) от продаж" Foreground="White"/>
+                    <TextBlock Text="Доходы от участия в других организациях" Foreground="White"/>
+                    <TextBlock Text="Проценты к получению" Foreground="White"/>
+                    <TextBlock Text="Проценты к уплате" Foreground="White"/>
+                    <TextBlock Text="Прочие расходы" Foreground="White"/>
+                    <TextBlock Text="Прочие доходы" Foreground="White"/>
+
+                    <TextBlock Text="  Прибыль (убыток) до налогообложения" Foreground="White"/>
+
+                    <TextBlock Text="Текущий налог на прибыль" Foreground="White"/>
+                    <TextBlock Text="  В том чисде постналоговые обязательства" Foreground="White"/>
+                    <TextBlock Text="Изменение отложенных налоговых обязательств" Foreground="White"/>
+                    <TextBlock Text="Изменение отложенных налоговых активов" Foreground="White"/>
+                    <TextBlock Text="Прочее" />
+                    <TextBlock Text="Читсая прибыль(убыток)" FontWeight="Bold" Foreground="White"/>
+                </StackPanel>
+
+
+
+                <!--Коды строк -->
+
+                <TextBlock Grid.Column="1" Grid.Row="1"
+                           TextAlignment="Center"   
+                           Foreground="White"
+                           >Код строки
+                </TextBlock>
+
+                <StackPanel  Grid.Column="1" Margin="0,0,0,0" Grid.Row="2">
+                    <TextBlock 
+                        Text="---------" 
+                        FontWeight="Bold" 
+                        Foreground="White"
+                        />
+                    <TextBlock 
+                        Text="--------" 
+                        FontWeight="Bold"   
+                          Height="18" 
+                        Foreground="White"
+                        />
+                </StackPanel>
+
+                <StackPanel Grid.Column="1" Grid.Row="3" Margin="0,0,0,0" Grid.RowSpan="2">
+                    <TextBlock Text="2110" Foreground="White"/>
+                    <TextBlock Text="2120" Foreground="White"/>
+                    <TextBlock Text="2100" Foreground="White"/>
+                    <TextBlock Text="2210" Foreground="White"/>
+                    <TextBlock Text="2220" Foreground="White"/>
+                    <TextBlock Text="2200" Foreground="White"/>
+                    <TextBlock Text="2310" Foreground="White"/>
+                    <TextBlock Text="2320" Foreground="White"/>
+                    <TextBlock Text="2330" Foreground="White"/>
+                    <TextBlock Text="2340" Foreground="White"/>
+                    <TextBlock Text="2350" Foreground="White"/>
+                    <TextBlock Text="2300" Foreground="White"/>
+                    <TextBlock Text="2410" Foreground="White"/>
+                    <TextBlock Text="2421" Foreground="White"/>
+                    <TextBlock Text="2430" Foreground="White"/>
+                    <TextBlock Text="2450" Foreground="White"/>
+                    <TextBlock Text="2460" Foreground="White"/>
+                    <TextBlock Text="2400" Foreground="White"/>
+
+                </StackPanel>
+                <StackPanel Grid.Column="1" Grid.Row="4" Margin="0,0,0,0">
+                    <TextBlock 
+                        Text="--------" 
+                        FontWeight="Bold"                     
+                        />
+                </StackPanel>         
+
+                <!-- Последний отчетный год -->
+
+                <StackPanel  Grid.Column="2" Margin="0,0,0,0" Grid.Row="2">
+                    <TextBlock 
+                        Text="Год:" 
+                        FontWeight="Bold" 
+                        Foreground="White"
+                        />
+                    <TextBlock 
+                        Text="{Binding FinResultReports[0].DateOfBalanse}" 
+                        FontWeight="Bold"   
+                        Height="18"
+                        Foreground="White"
+                        />
+                </StackPanel>
+
+                <StackPanel Grid.Column="2" Grid.Row="3" Margin="0,0,0,0" Grid.RowSpan="2">
+                    <TextBox  Background="Transparent" Height="15.96" Text="{Binding FinResultReports[0]._2110,StringFormat={}{0:n0}}" Foreground="White"/>
+                    <TextBox  Background="Transparent" Height="15.96" Text="{Binding FinResultReports[0]._2120, StringFormat={}{0:n0}}" Foreground="White"/>
+                    <TextBox  Background="Transparent" Height="15.96" Text="{Binding FinResultReports[0]._2100, StringFormat={}{0:n0}}" Foreground="White"/>
+                    <TextBox  Background="Transparent" Height="15.96" Text="{Binding FinResultReports[0]._2210, StringFormat={}{0:n0}}" Foreground="White"/>
+                    <TextBox  Background="Transparent" Height="15.96" Text="{Binding FinResultReports[0]._2220, StringFormat={}{0:n0}}" Foreground="White"/>
+                    <TextBox  Background="Transparent" Height="15.96" Text="{Binding FinResultReports[0]._2200, StringFormat={}{0:n0}}" Foreground="White"/>
+                    <TextBox  Background="Transparent" Height="15.96" Text="{Binding FinResultReports[0]._2310, StringFormat={}{0:n0}}" Foreground="White"/>
+                    <TextBox  Background="Transparent" Height="15.96" Text="{Binding FinResultReports[0]._2320, StringFormat={}{0:n0}}" Foreground="White"/>
+                    <TextBox  Background="Transparent" Height="15.96" Text="{Binding FinResultReports[0]._2330, StringFormat={}{0:n0}}" Foreground="White"/>
+                    <TextBox  Background="Transparent" Height="15.96" Text="{Binding FinResultReports[0]._2340, StringFormat={}{0:n0}}" Foreground="White"/>
+                    <TextBox  Background="Transparent" Height="15.96" Text="{Binding FinResultReports[0]._2350, StringFormat={}{0:n0}}" Foreground="White"/>
+                    <TextBox  Background="Transparent" Height="15.96" Text="{Binding FinResultReports[0]._2300, StringFormat={}{0:n0}}" Foreground="White"/>
+                    <TextBox  Background="Transparent" Height="15.96" Text="{Binding FinResultReports[0]._2410, StringFormat={}{0:n0}}" Foreground="White"/>
+                    <TextBox  Background="Transparent" Height="15.96" Text="{Binding FinResultReports[0]._2421, StringFormat={}{0:n0}}" Foreground="White"/>
+                    <TextBox  Background="Transparent" Height="15.96" Text="{Binding FinResultReports[0]._2430, StringFormat={}{0:n0}}" Foreground="White"/>
+                    <TextBox  Background="Transparent" Height="15.96" Text="{Binding FinResultReports[0]._2450, StringFormat={}{0:n0}}" Foreground="White"/>
+                    <TextBox  Background="Transparent" Height="15.96" Text="{Binding FinResultReports[0]._2460, StringFormat={}{0:n0}}" Foreground="White"/>
+                    <TextBox  Background="Transparent" Height="15.96" Text="{Binding FinResultReports[0]._2400, StringFormat={}{0:n0}}" Foreground="White"/>
+                </StackPanel>
+
+                <!-- ПредПоследний отчетный год -->
+
+                <StackPanel  Grid.Column="3" Margin="0,0,0,0" Grid.Row="2">
+                    <TextBlock 
+                        Text="Год:" 
+                        FontWeight="Bold" 
+                        Foreground="White"
+                        />
+                    <TextBlock 
+                        Text="{Binding FinResultReports[1].DateOfBalanse}" 
+                        FontWeight="Bold"   
+                          Height="18"  
+                        Foreground="White"
+                        />
+                </StackPanel>
+
+                <StackPanel Grid.Column="3" Grid.Row="3" Margin="0,0,0,0" Grid.RowSpan="2">
+                    <TextBox  Background="Transparent" Height="15.96" Text="{Binding FinResultReports[1]._2110,StringFormat={}{0:n0}}" Foreground="White"/>
+                    <TextBox  Background="Transparent" Height="15.96" Text="{Binding FinResultReports[1]._2120, StringFormat={}{0:n0}}" Foreground="White"/>
+                    <TextBox  Background="Transparent" Height="15.96" Text="{Binding FinResultReports[1]._2100, StringFormat={}{0:n0}}" Foreground="White"/>
+                    <TextBox  Background="Transparent" Height="15.96" Text="{Binding FinResultReports[1]._2210, StringFormat={}{0:n0}}" Foreground="White"/>
+                    <TextBox  Background="Transparent" Height="15.96" Text="{Binding FinResultReports[1]._2220, StringFormat={}{0:n0}}" Foreground="White"/>
+                    <TextBox  Background="Transparent" Height="15.96" Text="{Binding FinResultReports[1]._2200, StringFormat={}{0:n0}}" Foreground="White"/>
+                    <TextBox  Background="Transparent" Height="15.96" Text="{Binding FinResultReports[1]._2310, StringFormat={}{0:n0}}" Foreground="White"/>
+                    <TextBox  Background="Transparent" Height="15.96" Text="{Binding FinResultReports[1]._2320, StringFormat={}{0:n0}}" Foreground="White"/>
+                    <TextBox  Background="Transparent" Height="15.96" Text="{Binding FinResultReports[1]._2330, StringFormat={}{0:n0}}" Foreground="White"/>
+                    <TextBox  Background="Transparent" Height="15.96" Text="{Binding FinResultReports[1]._2340, StringFormat={}{0:n0}}" Foreground="White"/>
+                    <TextBox  Background="Transparent" Height="15.96" Text="{Binding FinResultReports[1]._2350, StringFormat={}{0:n0}}" Foreground="White"/>
+                    <TextBox  Background="Transparent" Height="15.96" Text="{Binding FinResultReports[1]._2300, StringFormat={}{0:n0}}" Foreground="White"/>
+                    <TextBox  Background="Transparent" Height="15.96" Text="{Binding FinResultReports[1]._2410, StringFormat={}{0:n0}}" Foreground="White"/>
+                    <TextBox  Background="Transparent" Height="15.96" Text="{Binding FinResultReports[1]._2421, StringFormat={}{0:n0}}" Foreground="White"/>
+                    <TextBox  Background="Transparent" Height="15.96" Text="{Binding FinResultReports[1]._2430, StringFormat={}{0:n0}}" Foreground="White"/>
+                    <TextBox  Background="Transparent" Height="15.96" Text="{Binding FinResultReports[1]._2450, StringFormat={}{0:n0}}" Foreground="White"/>
+                    <TextBox  Background="Transparent" Height="15.96" Text="{Binding FinResultReports[1]._2460, StringFormat={}{0:n0}}" Foreground="White"/>
+                    <TextBox  Background="Transparent" Height="15.96" Text="{Binding FinResultReports[1]._2400, StringFormat={}{0:n0}}" Foreground="White"/>
+                </StackPanel>
+
+                <!-- ПредПредПоследний отчетный год -->
+
+                <StackPanel  Grid.Column="4" Margin="0,0,0,0" Grid.Row="2">
+                    <TextBlock 
+                        Text="Год:" 
+                        FontWeight="Bold"  
+                        Foreground="White"
+                        />
+                    <TextBlock 
+                        Text="{Binding FinResultReports[1].DateOfBalanse}" 
+                        FontWeight="Bold"   
+                          Height="18" 
+                        Foreground="White"
+                        />
+                </StackPanel>
+
+                <StackPanel Grid.Column="4" Grid.Row="3" Margin="0,0,0,0" Grid.RowSpan="2">
+                    <TextBox  Background="Transparent" Height="15.96" Text="{Binding FinResultReports[1]._2110,StringFormat={}{0:n0}}" Foreground="White"/>
+                    <TextBox  Background="Transparent" Height="15.96" Text="{Binding FinResultReports[1]._2120, StringFormat={}{0:n0}}" Foreground="White"/>
+                    <TextBox  Background="Transparent" Height="15.96" Text="{Binding FinResultReports[1]._2100, StringFormat={}{0:n0}}" Foreground="White"/>
+                    <TextBox  Background="Transparent" Height="15.96" Text="{Binding FinResultReports[1]._2210, StringFormat={}{0:n0}}" Foreground="White"/>
+                    <TextBox  Background="Transparent" Height="15.96" Text="{Binding FinResultReports[1]._2220, StringFormat={}{0:n0}}" Foreground="White"/>
+                    <TextBox  Background="Transparent" Height="15.96" Text="{Binding FinResultReports[1]._2200, StringFormat={}{0:n0}}" Foreground="White"/>
+                    <TextBox  Background="Transparent" Height="15.96" Text="{Binding FinResultReports[1]._2310, StringFormat={}{0:n0}}" Foreground="White"/>
+                    <TextBox  Background="Transparent" Height="15.96" Text="{Binding FinResultReports[1]._2320, StringFormat={}{0:n0}}" Foreground="White"/>
+                    <TextBox  Background="Transparent" Height="15.96" Text="{Binding FinResultReports[1]._2330, StringFormat={}{0:n0}}" Foreground="White"/>
+                    <TextBox  Background="Transparent" Height="15.96" Text="{Binding FinResultReports[1]._2340, StringFormat={}{0:n0}}" Foreground="White"/>
+                    <TextBox  Background="Transparent" Height="15.96" Text="{Binding FinResultReports[1]._2350, StringFormat={}{0:n0}}" Foreground="White"/>
+                    <TextBox  Background="Transparent" Height="15.96" Text="{Binding FinResultReports[1]._2300, StringFormat={}{0:n0}}" Foreground="White"/>
+                    <TextBox  Background="Transparent" Height="15.96" Text="{Binding FinResultReports[1]._2410, StringFormat={}{0:n0}}" Foreground="White"/>
+                    <TextBox  Background="Transparent" Height="15.96" Text="{Binding FinResultReports[1]._2421, StringFormat={}{0:n0}}" Foreground="White"/>
+                    <TextBox  Background="Transparent" Height="15.96" Text="{Binding FinResultReports[1]._2430, StringFormat={}{0:n0}}" Foreground="White"/>
+                    <TextBox  Background="Transparent" Height="15.96" Text="{Binding FinResultReports[1]._2450, StringFormat={}{0:n0}}" Foreground="White"/>
+                    <TextBox  Background="Transparent" Height="15.96" Text="{Binding FinResultReports[1]._2460, StringFormat={}{0:n0}}" Foreground="White"/>
+                    <TextBox  Background="Transparent" Height="15.96" Text="{Binding FinResultReports[1]._2400, StringFormat={}{0:n0}}" Foreground="White"/>
+                </StackPanel>
+
+
+
+
+
+
+
+            </Grid>
+
         </Border>
     </Grid>
+
+
+
+
 </UserControl>
