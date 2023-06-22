@@ -442,10 +442,6 @@
                 </StackPanel>
 
 
-
-
-
-
                 <StackPanel Grid.Column="1" Grid.Row="4" Margin="10,9,10,77">
 
                     <TextBlock Text="{Binding BalanceReports[0]._1100}" />
