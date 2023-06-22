@@ -15,8 +15,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-
-
+using System.Diagnostics.Eventing.Reader;
 
 namespace FinReportsandAnalitics.Views
 {
@@ -53,14 +52,20 @@ namespace FinReportsandAnalitics.Views
 
         private async void btnInn_Click(object sender, RoutedEventArgs e)
         {
-           //здесь вся логика с апи ключом и вытягиванием информации из контура
-           //если все успешно, то открывается главная форма
-           KonturSendReciever_ sendReciever = new KonturSendReciever_();
+            //здесь вся логика с апи ключом и вытягиванием информации из контура
+            //если все успешно, то открывается главная форма
+            KonturSendReciever_ sendReciever = new KonturSendReciever_();
             var a = await KonturSendReciever_.GetRequestBuhFormsAsync(txtInn.Text);
-           MyMainView myMainView = new MyMainView(a);
-            myMainView.Show();
-            
-            
+            if (a != null)
+            {
+                MyMainView myMainView = new MyMainView(a);
+                myMainView.Show();
+            }
+            else
+            {
+                txtInn.Text = "";
+                return;
+            }
         }
 
         private void PreviewTextInput(object sender, TextCompositionEventArgs e)

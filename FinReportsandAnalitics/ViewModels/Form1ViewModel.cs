@@ -68,7 +68,11 @@ namespace FinReportsandAnalitics.ViewModels
         {
             BalanceReports = new ObservableCollection<BalanceRepot>();
 
+
+            _finResultReports= new ObservableCollection<FinResultReport>();
+
             _finResultReports = new ObservableCollection<FinResultReport>();
+
 
             FinResultReports = _FinResultReport.BuildFinResultReport(organizations);
 
