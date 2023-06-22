@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace FinReportsandAnalitics.ViewModels
 {
-   public class Form2ViewModel:ViewModelBase
+    public class Form2ViewModel : ViewModelBase
     {
 
 
-        private List<OrganizationData> _organization;      
+        private List<OrganizationData> _organization;
         private ObservableCollection<FinResultReport> _finResultReports;
         private FinResultReport _FinResultReport = new FinResultReport();
 
@@ -31,7 +31,7 @@ namespace FinReportsandAnalitics.ViewModels
         }
 
 
-      
+
         public List<OrganizationData> Organization
         {
             get
@@ -46,8 +46,8 @@ namespace FinReportsandAnalitics.ViewModels
         }
 
         public Form2ViewModel(List<OrganizationData> organizations)
-        {       
-            _finResultReports = new ObservableCollection<FinResultReport>();     
+        {
+            _finResultReports = new ObservableCollection<FinResultReport>();
             FinResultReports = _FinResultReport.BuildFinResultReport(organizations);
 
         }
@@ -55,4 +55,6 @@ namespace FinReportsandAnalitics.ViewModels
 
 
     }
+
+
 }

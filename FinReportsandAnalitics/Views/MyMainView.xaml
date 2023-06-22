@@ -6,7 +6,7 @@
         xmlns:viewModel="clr-namespace:FinReportsandAnalitics.ViewModels"
         xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp" xmlns:local="clr-namespace:FinReportsandAnalitics.Views"
         mc:Ignorable="d"
-        Title="MyMainView" Height="700" Width="1300"
+        Title="MyMainView" Height="1000" Width="1300"
         WindowStartupLocation="CenterScreen"
         WindowStyle="None"
         Background="Transparent"
@@ -25,11 +25,12 @@
             <local:SearchView/>
         </DataTemplate>
         <DataTemplate DataType="{x:Type viewModel:Form1ViewModel}">
-            <!--<local:Form1View/>-->
+            <local:Form1View/>
         </DataTemplate>
         <DataTemplate DataType="{x:Type viewModel:Form2ViewModel}">
             <local:Form2View/>
         </DataTemplate>
+        
 
     </Window.Resources>
 
@@ -100,25 +101,7 @@
                             <fa:IconImage Icon="FileText" Style="{StaticResource menuButtonIcon}"/>
                             <TextBlock Text="Форма 1" Style="{StaticResource menuButtonText}"/>
                            
-                            <Button Margin="15,0,0,0" 
-                                    Width="100"
-                                    Click="Button_Click"
-                                    
-                                    >
-                                <TextBlock Text="--> показать" Style="{StaticResource menuButtonText}"/>
-
-                                <Button.Style>
-                                    <Style TargetType="Button">
-                                        <Setter Property="Background" Value="#3914AF"/>
-                                        <Style.Triggers>
-                                            <Trigger Property="IsMouseOver" Value="True">
-                                                <Setter Property="Background" Value="#866FD7"/>
-                                            </Trigger>
-                                        </Style.Triggers>
-                                    </Style>
-                                </Button.Style>
-
-                            </Button>
+                            
                         </StackPanel>
                     </RadioButton>
                     <RadioButton Style="{StaticResource menuButton}"
@@ -126,33 +109,7 @@
                                  Command="{Binding ShowForm2ViewCommand}">
                         <StackPanel Orientation="Horizontal">
                             <fa:IconImage Icon="FileText" Style="{StaticResource menuButtonIcon}"/>
-                            <TextBlock Text="Форма 2" Style="{StaticResource menuButtonText}"/>
-
-
-                            <Button Margin="15,0,0,0" 
-                                    Width="100"
-                                    Click="Button_Click_1"
-                                    
-                                    >
-                                <TextBlock Text="--> показать" Style="{StaticResource menuButtonText}"/>
-
-                                <Button.Style>
-                                    <Style TargetType="Button">
-                                        <Setter Property="Background" Value="#3914AF"/>
-                                        <Style.Triggers>
-                                            <Trigger Property="IsMouseOver" Value="True">
-                                                <Setter Property="Background" Value="#866FD7"/>
-                                            </Trigger>
-                                        </Style.Triggers>
-                                    </Style>
-                                </Button.Style>
-                            </Button>
-
-
-
-
-
-
+                            <TextBlock Text="Форма 2" Style="{StaticResource menuButtonText}"/>                            
                         </StackPanel>
                     </RadioButton>
                     <RadioButton Style="{StaticResource menuButton}"
@@ -163,7 +120,8 @@
                         </StackPanel>
                     </RadioButton>
                     <RadioButton Style="{StaticResource menuButton}"
-                                 Tag="{StaticResource color4}">
+                                 Tag="{StaticResource color4}"
+                                 Command="{Binding ShowAnalViewCommand}">
                         <StackPanel Orientation="Horizontal">
                             <fa:IconImage Icon="ChartLine" Style="{StaticResource menuButtonIcon}"/>
                             <TextBlock Text="Анализировать" Style="{StaticResource menuButtonText}"/>
