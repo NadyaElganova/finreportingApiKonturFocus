@@ -76,22 +76,22 @@ namespace FinReportsandAnalitics.Views
             else this.WindowState= WindowState.Normal;              
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
+        //private void Button_Click(object sender, RoutedEventArgs e)
+        //{
             
-            Form1Window form1Window = new Form1Window(_Organization);
-            form1Window.Show();
-        }
+        //    Form1Window form1Window = new Form1Window(_Organization);
+        //    form1Window.Show();
+        //}
 
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
+        //private void Button_Click_1(object sender, RoutedEventArgs e)
+        //{
 
-            Form2Window form2Window = new Form2Window(_Organization);
-            form2Window.Show();
+        //    Form2Window form2Window = new Form2Window(_Organization);
+        //    form2Window.Show();
 
 
-        }
+        //}
 
     }
 }

@@ -1,19 +1,15 @@
-using CommunityToolkit.Mvvm.ComponentModel;
-using FinReportsandAnalitics.Models;
-using Microsoft.EntityFrameworkCore.Query.Internal;
-
+﻿using FinReportsandAnalitics.Models;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows;
-using Wpf.Ui.Common.Interfaces;
+using System.Windows.Input;
 
 namespace FinReportsandAnalitics.ViewModels
 {
-    public partial class Form1ViewModel : ViewModelBase
+    public class Form1ViewModel : ViewModelBase
     {
 
         private List<OrganizationData> _organization;
@@ -27,8 +23,7 @@ namespace FinReportsandAnalitics.ViewModels
 
         private BalanceRepot _BalanceRepot = new BalanceRepot();
 
-        private FinResultReport _FinResultReport = new FinResultReport();   
-
+        private FinResultReport _FinResultReport = new FinResultReport();
 
         public ObservableCollection<FinResultReport> FinResultReports
         {
@@ -42,7 +37,7 @@ namespace FinReportsandAnalitics.ViewModels
                 OnPropertyChanged(nameof(_finResultReports));
             }
         }
-       
+
         public ObservableCollection<BalanceRepot> BalanceReports
         {
             get
@@ -73,20 +68,21 @@ namespace FinReportsandAnalitics.ViewModels
         {
             BalanceReports = new ObservableCollection<BalanceRepot>();
 
+
             _finResultReports= new ObservableCollection<FinResultReport>();
+
+            _finResultReports = new ObservableCollection<FinResultReport>();
+
 
             FinResultReports = _FinResultReport.BuildFinResultReport(organizations);
 
-            BalanceReports = _BalanceRepot.BuildBalanse(organizations);
-
-          //  MessageBox.Show(BalanceReports[0]._1110.ToString());
+            BalanceReports = _BalanceRepot.BuildBalanse(organizations);            
 
         }
 
         //public Form1ViewModel()
         //{
         //}
-
-
+        
     }
 }
