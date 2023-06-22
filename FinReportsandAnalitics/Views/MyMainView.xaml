@@ -30,7 +30,10 @@
         <DataTemplate DataType="{x:Type viewModel:Form2ViewModel}">
             <local:Form2View/>
         </DataTemplate>
-        
+        <DataTemplate DataType="{x:Type viewModel:AnaliticViewModel}">
+            <local:AnalitcsView/>
+        </DataTemplate>
+
 
     </Window.Resources>
 
@@ -104,6 +107,7 @@
                             
                         </StackPanel>
                     </RadioButton>
+                    
                     <RadioButton Style="{StaticResource menuButton}"
                                  Tag="{StaticResource color8}"
                                  Command="{Binding ShowForm2ViewCommand}">
@@ -112,6 +116,7 @@
                             <TextBlock Text="Форма 2" Style="{StaticResource menuButtonText}"/>                            
                         </StackPanel>
                     </RadioButton>
+                    
                     <RadioButton Style="{StaticResource menuButton}"
                                  Tag="{StaticResource color9}">
                         <StackPanel Orientation="Horizontal">
@@ -119,6 +124,7 @@
                             <TextBlock Text="Скачать формы" Style="{StaticResource menuButtonText}"/>
                         </StackPanel>
                     </RadioButton>
+                    
                     <RadioButton Style="{StaticResource menuButton}"
                                  Tag="{StaticResource color4}"
                                  Command="{Binding ShowAnalViewCommand}">
@@ -127,6 +133,7 @@
                             <TextBlock Text="Анализировать" Style="{StaticResource menuButtonText}"/>
                         </StackPanel>
                     </RadioButton>
+                    
                     <RadioButton Style="{StaticResource menuButton}"
                                  Tag="{StaticResource color5}">
                         <StackPanel Orientation="Horizontal">
@@ -134,6 +141,7 @@
                             <TextBlock Text="Настройки" Style="{StaticResource menuButtonText}"/>
                         </StackPanel>
                     </RadioButton>
+                    
                     <TextBlock x:Name="innUnvisible"
                                Text="{Binding Inn, Mode=TwoWay}">
                         

@@ -1,0 +1,306 @@
+﻿<UserControl x:Class="FinReportsandAnalitics.Views.AnalitcsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FinReportsandAnalitics.Views"
+             xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="1000">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="170"/>
+                <ColumnDefinition Width="120"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Orientation="Horizontal"
+                        VerticalAlignment="Top"
+                        Grid.Column="0">
+                <fa:IconImage Icon="FileText" Height="20" Width="20" Foreground="{StaticResource plainTextColor3}"/>
+                <TextBox Text="Аналитические показатели"   
+                    FontSize="13"
+                         Height="24"
+                           Width="300"
+                           Background="Transparent"
+                             FontWeight="Medium"
+                             FontFamily="Montserrat"                            
+                             Foreground="{StaticResource plainTextColor3}"
+                             CaretBrush="{StaticResource plainTextColor3}"
+                             BorderBrush="{StaticResource plainTextColor3}"
+                             BorderThickness="0,0,0,0"                             
+                             VerticalContentAlignment="Center"
+                             Margin="5,5,0,0"></TextBox>
+            </StackPanel>
+            <Button Grid.Column="1"
+                            Command="{Binding}"                            
+                            Content="Отправить на e-mail"                            
+                            FontSize="12"
+                            FontFamily="Montserrat"
+                            Cursor="Hand"
+                            BorderThickness="0"
+                            Foreground="White"
+                            Margin="0,0,15,0"
+                    VerticalAlignment="Top">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#773DFF"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="Button">
+                                    <Border Height="30"
+                                                    CornerRadius="15"
+                                                    Background="{TemplateBinding Background}">
+                                        <ContentPresenter VerticalAlignment="Center"
+                                                                      HorizontalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#836EFB"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+            <Button Grid.Column="2"
+                            Command="{Binding}"                            
+                            Content="Открыть"                            
+                            FontSize="12"
+                            FontFamily="Montserrat"
+                            Cursor="Hand"
+                            BorderThickness="0"
+                            Foreground="White"
+                    VerticalAlignment="Top">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#773DFF"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="Button">
+                                    <Border Height="30"
+                                                    CornerRadius="15"
+                                                    Background="{TemplateBinding Background}">
+                                        <ContentPresenter VerticalAlignment="Center"
+                                                                      HorizontalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#836EFB"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+
+        </Grid>
+        <Border Grid.Row="1"
+                Background="#200F53"
+                CornerRadius="10" 
+                Padding="10"
+                Width="1000"
+                Height="800">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="380"/>
+                    <ColumnDefinition Width="150" />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="32" />
+                    <RowDefinition Height="38" />
+                    <!--Баланс-->
+                    <RowDefinition Height="32" />
+                    <!--Актив-Основные -->
+                    <RowDefinition Height="200" />
+                    <RowDefinition Height="100" />
+                   
+
+
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0" Grid.Column="0"  Margin="0,0,0,9" Foreground="White">
+                  Аналитические данные
+                </TextBlock>
+                <TextBlock Grid.Row="0" Grid.Column="1"
+                           Grid.ColumnSpan="2"
+                           TextAlignment="Right" 
+                           Margin="0,0,0,10"
+                           Foreground="White">
+                   ИНН предприятия:
+                </TextBlock>
+                <TextBlock Grid.Row="0" Grid.Column="3" 
+                           Text="{Binding FinResultReports[0].Company}"
+                           TextAlignment="Left" 
+                           Margin="0,0,0,0"
+                           Foreground="White"/>
+
+
+                <StackPanel  Grid.Column="0" Margin="0,0,0,0" Grid.Row="2">
+                    <TextBlock 
+                        Text="Наименование показателя" 
+                        FontWeight="Bold"                       
+                        Foreground="White"
+                        />
+                    <TextBlock 
+                        Text="" 
+                        FontWeight="Bold"   
+                        Height="18"
+                        Foreground="White"
+                        />
+                </StackPanel>
+
+                <StackPanel Grid.Column="0" Grid.Row="3" Margin="0,0,0,0" Grid.RowSpan="2">
+                    <TextBlock Text="Коэффициент абсолютной ликвидности" Foreground="White"/>
+                    <TextBlock Text="Коэффициент срочной ликвидности" Foreground="White"/>
+                    <TextBlock Text="Коэффициент автономии" Foreground="White"/>
+                    <TextBlock Text="Коэффициент покрытия основных средств собственными средствами"
+                               TextWrapping="Wrap"
+                               Foreground="White"/>
+                    <TextBlock Text="--" Foreground="White"/>
+                                
+                    
+                </StackPanel>
+                
+                <!--Текст - обощающий вывод -->
+
+                <TextBlock Grid.Column="0" Grid.ColumnSpan="4" Grid.Row="4"
+                    Text="{Binding Conclusion}" TextWrapping="Wrap" Foreground="White"/>
+                <!--Коды строк -->
+
+                <TextBlock Grid.Column="1" Grid.Row="1"
+                           TextAlignment="Center"
+                           TextWrapping="Wrap"
+                           Foreground="White"
+                           >Способ расчета
+                </TextBlock>
+
+                <StackPanel  Grid.Column="1" Margin="0,0,0,0" Grid.Row="2">
+                    <TextBlock 
+                        Text="---------" 
+                        FontWeight="Bold" 
+                        Foreground="White"
+                        />
+                    <TextBlock 
+                        Text="--------" 
+                        FontWeight="Bold"   
+                          Height="18" 
+                        Foreground="White"
+                        />
+                </StackPanel>
+
+                <StackPanel Grid.Column="1" Grid.Row="3" Margin="0,0,0,0" Grid.RowSpan="2">
+                    <TextBlock Text="(1240 + 1250) / 1500" 
+                               TextWrapping="Wrap"
+                               Foreground="White"/>
+                    <TextBlock Text="(1230 + 1240 + 1250)/1500" Foreground="White"/>
+                    <TextBlock Text="1300 / 1700" Foreground="White"/>
+                    <TextBlock Text="" Foreground="White"/>
+                    <TextBlock Text="1300 / 1150" Foreground="White"/>
+                    <TextBlock Text="--" Foreground="White"/>
+                   
+
+                </StackPanel>
+                <StackPanel Grid.Column="1" Grid.Row="4" Margin="0,0,0,0">
+                    <TextBlock 
+                        Text="--------" 
+                        FontWeight="Bold"                     
+                        />
+                </StackPanel>         
+
+                <!-- Последний отчетный год -->
+
+                <StackPanel  Grid.Column="2" Margin="0,0,0,0" Grid.Row="2">
+                    <TextBlock 
+                        Text="Год:" 
+                        FontWeight="Bold" 
+                        Foreground="White"
+                        />
+                    <TextBlock 
+                        Text="{Binding FinResultReports[0].DateOfBalanse}" 
+                        FontWeight="Bold"   
+                        Height="18"
+                        Foreground="White"
+                        />
+                </StackPanel>
+
+                <StackPanel Grid.Column="2" Grid.Row="3" Margin="0,0,0,0" Grid.RowSpan="2">
+                    <TextBox  Background="Transparent" Height="15.96" Text="{Binding  AbsoluteLiquidity[0],StringFormat={}{0:n2} }" Foreground="White"/>
+                    <TextBox  Background="Transparent" Height="15.96" Text="{Binding UrgentLiquidity[0], StringFormat={}{0:n2}}" Foreground="White"/>
+                    <TextBox  Background="Transparent" Height="15.96" Text="{Binding Autonomy[0], StringFormat={}{0:n2}}" Foreground="White"/>
+                    <TextBox  Background="Transparent" Height="15.96" Text="" Foreground="White"/>
+                    <TextBox  Background="Transparent" Height="15.96" Text="{Binding CoefficientCoverageFixedAssetsOwnFunds[0], StringFormat={}{0:n2}}" Foreground="White"/>
+                               
+                   
+                </StackPanel>
+
+                <!-- ПредПоследний отчетный год -->
+
+                <StackPanel  Grid.Column="3" Margin="0,0,0,0" Grid.Row="2">
+                    <TextBlock 
+                        Text="Год:" 
+                        FontWeight="Bold" 
+                        Foreground="White"
+                        />
+                    <TextBlock 
+                        Text="{Binding FinResultReports[1].DateOfBalanse}" 
+                        FontWeight="Bold"   
+                          Height="18"  
+                        Foreground="White"
+                        />
+                </StackPanel>
+
+                <StackPanel Grid.Column="3" Grid.Row="3" Margin="0,0,0,0" Grid.RowSpan="2">
+                    <TextBox  Background="Transparent" Height="15.96" Text="{Binding  AbsoluteLiquidity[1],StringFormat={}{0:n2} }" Foreground="White"/>
+                    <TextBox  Background="Transparent" Height="15.96" Text="{Binding UrgentLiquidity[1], StringFormat={}{0:n2}}" Foreground="White"/>
+                    <TextBox  Background="Transparent" Height="15.96" Text="{Binding Autonomy[1], StringFormat={}{0:n2}}" Foreground="White"/>
+                    <TextBox  Background="Transparent" Height="15.96" Text="" Foreground="White"/>
+                    <TextBox  Background="Transparent" Height="15.96" Text="{Binding CoefficientCoverageFixedAssetsOwnFunds[1], StringFormat={}{0:n2}}" Foreground="White"/>
+                </StackPanel>
+
+                <!-- ПредПредПоследний отчетный год -->
+
+                <StackPanel  Grid.Column="4" Margin="0,0,0,0" Grid.Row="2">
+                    <TextBlock 
+                        Text="Год:" 
+                        FontWeight="Bold"  
+                        Foreground="White"
+                        />
+                    <TextBlock 
+                        Text="{Binding FinResultReports[1].DateOfBalanse}" 
+                        FontWeight="Bold"   
+                          Height="18" 
+                        Foreground="White"
+                        />
+                </StackPanel>
+
+                <StackPanel Grid.Column="4" Grid.Row="3" Margin="0,0,0,0" Grid.RowSpan="2">
+                    <TextBox  Background="Transparent" Height="15.96" Text="{Binding  AbsoluteLiquidity[2],StringFormat={}{0:n2} }" Foreground="White"/>
+                    <TextBox  Background="Transparent" Height="15.96" Text="{Binding UrgentLiquidity[2], StringFormat={}{0:n2}}" Foreground="White"/>
+                    <TextBox  Background="Transparent" Height="15.96" Text="{Binding Autonomy[2], StringFormat={}{0:n2}}" Foreground="White"/>
+                    <TextBox  Background="Transparent" Height="15.96" Text="" Foreground="White"/>
+                    <TextBox  Background="Transparent" Height="15.96" Text="{Binding CoefficientCoverageFixedAssetsOwnFunds[2], StringFormat={}{0:n2}}" Foreground="White"/>
+                </StackPanel>
+
+
+            </Grid>
+
+        </Border>
+    </Grid>
+
+
+
+
+</UserControl>

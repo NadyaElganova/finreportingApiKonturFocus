@@ -1,4 +1,5 @@
 ﻿using FinReportsandAnalitics.Models;
+using FinReportsandAnalitics.Views.Windows;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -24,6 +25,11 @@ namespace FinReportsandAnalitics.ViewModels
         private BalanceRepot _BalanceRepot = new BalanceRepot();
 
         private FinResultReport _FinResultReport = new FinResultReport();
+
+
+        public ICommand OpenForm1ViewCommand { get; }
+      
+
 
         public ObservableCollection<FinResultReport> FinResultReports
         {
@@ -64,8 +70,15 @@ namespace FinReportsandAnalitics.ViewModels
             }
         }
 
+
+     
+
+
+
+
         public Form1ViewModel(List<OrganizationData> organizations)
         {
+            Organization = organizations;
             BalanceReports = new ObservableCollection<BalanceRepot>();
 
 
@@ -76,13 +89,24 @@ namespace FinReportsandAnalitics.ViewModels
 
             FinResultReports = _FinResultReport.BuildFinResultReport(organizations);
 
-            BalanceReports = _BalanceRepot.BuildBalanse(organizations);            
-
+            BalanceReports = _BalanceRepot.BuildBalanse(organizations);
+         
+            OpenForm1ViewCommand = new ViewModelCommand(ExecuteOpenForm1ViewCommand);
+           
         }
 
-        //public Form1ViewModel()
-        //{
-        //}
-        
+
+
+        private void ExecuteOpenForm1ViewCommand(object obj)
+        {
+            Form1Window form1Window = new Form1Window(Organization);
+            form1Window.Show();
+        }
+
+
+
+
+
+
     }
 }

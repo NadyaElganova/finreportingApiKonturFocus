@@ -37,7 +37,7 @@ namespace FinReportsandAnalitics.Models
         public ObservableCollection<FinResultReport> BuildFinResultReport(List<OrganizationData> organizationDatas)
         {
             ObservableCollection<FinResultReport> CurrentReports = new ObservableCollection<FinResultReport>();
-           
+
             int count = 0;
             int value = organizationDatas[0].BuhForms.Count();
 
@@ -46,7 +46,7 @@ namespace FinReportsandAnalitics.Models
                 count++;
                 FinResultReport FRLast = new FinResultReport();
                 FRLast.Company = "Тестовая";
-                              
+
                 FRLast.DateOfBalanse = new DateTime(organizationDatas[0].BuhForms[value - count].Year, 12, 31);
 
                 foreach (Row row in organizationDatas[0].BuhForms[value - count].Form2)
@@ -130,9 +130,9 @@ namespace FinReportsandAnalitics.Models
 
                 CurrentReports.Add(FRLast);
 
-            }  
-           
-            return null;
+            }
+
+            return CurrentReports;
         }
     }
 }

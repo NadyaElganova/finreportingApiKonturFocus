@@ -7,6 +7,294 @@
         mc:Ignorable="d"
         Title="Form2Window" Height="450" Width="800">
     <Grid>
-        
+        <Border Grid.Row="2"
+                Background="Beige"
+                CornerRadius="10" 
+                Padding="10">
+
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="380"/>
+                    <ColumnDefinition Width="70" />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="32" />
+                    <RowDefinition Height="38" />
+                    <!--Баланс-->
+                    <RowDefinition Height="32" />
+                    <!--Актив-Основные -->
+                    <RowDefinition Height="300" />
+                    <!--Оснонвые-->
+
+                    <!--Оборотные-->
+
+                    <!--Баланс-->
+                    <RowDefinition Height="138" />
+                    <!--Баланс-->
+                    <RowDefinition Height="105" />
+                    <!--Баланс-->
+                    <RowDefinition Height="130" />
+                    <!--Баланс-->
+                    <RowDefinition Height="108*" />
+                    <!--Баланс-->
+
+
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0" Grid.Column="0"  Margin="0,0,0,9" >
+                   Отчет от фин результатах
+                </TextBlock>
+                <TextBlock Grid.Row="0" Grid.Column="1"
+                           Grid.ColumnSpan="2"
+                           TextAlignment="Right" Margin="0,0,0,10">
+                   ИНН предприятия:
+                </TextBlock>
+                <TextBlock Grid.Row="0" Grid.Column="3" 
+                           Text="{Binding FinResultReports[0].Company}"
+                           TextAlignment="Left" Margin="0,0,0,0"/>
+
+
+                <StackPanel  Grid.Column="0" Margin="0,0,0,0" Grid.Row="2">
+                    <TextBlock 
+                        Text="Наименование показателя" 
+                        FontWeight="Bold"                       
+                        />
+                    <TextBlock 
+                        Text="" 
+                        FontWeight="Bold"   
+                          Height="18"                       
+                        />
+                </StackPanel>
+
+                <StackPanel Grid.Column="0" Grid.Row="3" Margin="0,0,0,0" Grid.RowSpan="2">
+                    <TextBlock Text="Выручка" />
+                    <TextBlock Text="Себестоимоть продаж" />
+                    <TextBlock Text="Валовая прибыль (убыток)" />
+                    <TextBlock Text="Коммерческие расходы" />
+                    <TextBlock Text="Управленческие расходы" />
+                    <TextBlock Text="  Прибыль (убыток) от продаж" />
+                    <TextBlock Text="Доходы от участия в других организациях" />
+                    <TextBlock Text="Проценты к получению" />
+                    <TextBlock Text="Проценты к уплате" />
+                    <TextBlock Text="Прочие расходы" />
+                    <TextBlock Text="Прочие доходы" />
+
+                    <TextBlock Text="  Прибыль (убыток) до налогообложения" />
+
+                    <TextBlock Text="Текущий налог на прибыль" />
+                    <TextBlock Text="  В том чисде постналоговые обязательства" />
+                    <TextBlock Text="Изменение отложенных налоговых обязательств" />
+                    <TextBlock Text="Изменение отложенных налоговых активов" />
+                    <TextBlock Text="Прочее" />
+                    <TextBlock Text="Читсая прибыль(убыток)" FontWeight="Bold" />
+                </StackPanel>
+
+
+
+                <!--Коды строк -->
+
+                <TextBlock Grid.Column="1" Grid.Row="1"
+                           TextAlignment="Center"      
+                           >Код строки
+                </TextBlock>
+
+                <StackPanel  Grid.Column="1" Margin="0,0,0,0" Grid.Row="2">
+                    <TextBlock 
+                        Text="---------" 
+                        FontWeight="Bold"                       
+                        />
+                    <TextBlock 
+                        Text="--------" 
+                        FontWeight="Bold"   
+                          Height="18"                       
+                        />
+                </StackPanel>
+
+                <StackPanel Grid.Column="1" Grid.Row="3" Margin="0,0,0,0" Grid.RowSpan="2">
+                    <TextBlock Text="2110" />
+                    <TextBlock Text="2120" />
+                    <TextBlock Text="2100" />
+                    <TextBlock Text="2210" />
+                    <TextBlock Text="2220" />
+                    <TextBlock Text="2200" />
+                    <TextBlock Text="2310" />
+                    <TextBlock Text="2320" />
+                    <TextBlock Text="2330" />
+                    <TextBlock Text="2340" />
+                    <TextBlock Text="2350" />
+                    <TextBlock Text="2300" />
+                    <TextBlock Text="2410" />
+                    <TextBlock Text="2421" />
+                    <TextBlock Text="2430" />
+                    <TextBlock Text="2450" />
+                    <TextBlock Text="2460" />
+                    <TextBlock Text="2400" />
+
+                </StackPanel>
+                <StackPanel Grid.Column="1" Grid.Row="4" Margin="0,0,0,0">
+                    <TextBlock 
+                        Text="--------" 
+                        FontWeight="Bold"                     
+                        />
+                </StackPanel>
+                <StackPanel Grid.Column="1" Grid.Row="5" Margin="0,0,0,0">
+                    <TextBlock Text="1210" />
+                    <TextBlock Text="1220" />
+                    <TextBlock Text="1230" />
+                    <TextBlock Text="1240" />
+                    <TextBlock Text="1250" />
+                    <TextBlock Text="1260" />
+                    <TextBlock Text="1200" />
+                    <TextBlock Text="1600" />
+                </StackPanel>
+
+                <StackPanel Grid.Column="1" Grid.Row="6">
+                    <TextBlock Text="-------" FontWeight="Bold" />
+                    <TextBlock Text="1310" />
+                    <TextBlock Text="1320" />
+                    <TextBlock Text="1340" />
+                    <TextBlock Text="1350" />
+                    <TextBlock Text="1360" />
+                    <TextBlock Text="1370" />
+                    <TextBlock Text="1300" />
+                </StackPanel>
+                <StackPanel Grid.Column="1" Grid.Row="7">
+                    <TextBlock Text="-----------" FontWeight="Bold" />
+                    <TextBlock Text="1410" />
+                    <TextBlock Text="1420" />
+                    <TextBlock Text="1430" />
+                    <TextBlock Text="1450" />
+                    <TextBlock Text="1400" />
+                </StackPanel>
+
+                <StackPanel Grid.Column="1" Grid.Row="8">
+                    <TextBlock Text="------" FontWeight="Bold" />
+                    <TextBlock Text="1510" />
+                    <TextBlock Text="1520" />
+                    <TextBlock Text="1530" />
+                    <TextBlock Text="1540" />
+                    <TextBlock Text="1550" />
+                    <TextBlock Text="1500" />
+                    <TextBlock Text="1700" />
+                </StackPanel>
+
+                <!-- Последний отчетный год -->
+
+                <StackPanel  Grid.Column="2" Margin="0,0,0,0" Grid.Row="2">
+                    <TextBlock 
+                        Text="Год:" 
+                        FontWeight="Bold"                       
+                        />
+                    <TextBlock 
+                        Text="{Binding FinResultReports[0].DateOfBalanse}" 
+                        FontWeight="Bold"   
+                          Height="18"                       
+                        />
+                </StackPanel>
+
+                <StackPanel Grid.Column="2" Grid.Row="3" Margin="0,0,0,0" Grid.RowSpan="2">
+                    <TextBox  Background="Beige" Height="15.96" Text="{Binding FinResultReports[0]._2110,StringFormat={}{0:n0}}"/>
+                    <TextBox  Background="Beige" Height="15.96" Text="{Binding FinResultReports[0]._2120, StringFormat={}{0:n0}}"/>
+                    <TextBox  Background="Beige" Height="15.96" Text="{Binding FinResultReports[0]._2100, StringFormat={}{0:n0}}"/>
+                    <TextBox  Background="Beige" Height="15.96" Text="{Binding FinResultReports[0]._2210, StringFormat={}{0:n0}}"/>
+                    <TextBox  Background="Beige" Height="15.96" Text="{Binding FinResultReports[0]._2220, StringFormat={}{0:n0}}"/>
+                    <TextBox  Background="Beige" Height="15.96" Text="{Binding FinResultReports[0]._2200, StringFormat={}{0:n0}}"/>
+                    <TextBox  Background="Beige" Height="15.96" Text="{Binding FinResultReports[0]._2310, StringFormat={}{0:n0}}"/>
+                    <TextBox  Background="Beige" Height="15.96" Text="{Binding FinResultReports[0]._2320, StringFormat={}{0:n0}}"/>
+                    <TextBox  Background="Beige" Height="15.96" Text="{Binding FinResultReports[0]._2330, StringFormat={}{0:n0}}"/>
+                    <TextBox  Background="Beige" Height="15.96" Text="{Binding FinResultReports[0]._2340, StringFormat={}{0:n0}}"/>
+                    <TextBox  Background="Beige" Height="15.96" Text="{Binding FinResultReports[0]._2350, StringFormat={}{0:n0}}"/>
+                    <TextBox  Background="Beige" Height="15.96" Text="{Binding FinResultReports[0]._2300, StringFormat={}{0:n0}}"/>
+                    <TextBox  Background="Beige" Height="15.96" Text="{Binding FinResultReports[0]._2410, StringFormat={}{0:n0}}"/>
+                    <TextBox  Background="Beige" Height="15.96" Text="{Binding FinResultReports[0]._2421, StringFormat={}{0:n0}}"/>
+                    <TextBox  Background="Beige" Height="15.96" Text="{Binding FinResultReports[0]._2430, StringFormat={}{0:n0}}"/>
+                    <TextBox  Background="Beige" Height="15.96" Text="{Binding FinResultReports[0]._2450, StringFormat={}{0:n0}}"/>
+                    <TextBox  Background="Beige" Height="15.96" Text="{Binding FinResultReports[0]._2460, StringFormat={}{0:n0}}"/>
+                    <TextBox  Background="Beige" Height="15.96" Text="{Binding FinResultReports[0]._2400, StringFormat={}{0:n0}}"/>
+                </StackPanel>
+
+                <!-- ПредПоследний отчетный год -->
+
+                <StackPanel  Grid.Column="3" Margin="0,0,0,0" Grid.Row="2">
+                    <TextBlock 
+                        Text="Год:" 
+                        FontWeight="Bold"                       
+                        />
+                    <TextBlock 
+                        Text="{Binding FinResultReports[1].DateOfBalanse}" 
+                        FontWeight="Bold"   
+                          Height="18"                       
+                        />
+                </StackPanel>
+
+                <StackPanel Grid.Column="3" Grid.Row="3" Margin="0,0,0,0" Grid.RowSpan="2">
+                    <TextBox  Background="Beige" Height="15.96" Text="{Binding FinResultReports[1]._2110,StringFormat={}{0:n0}}"/>
+                    <TextBox  Background="Beige" Height="15.96" Text="{Binding FinResultReports[1]._2120, StringFormat={}{0:n0}}"/>
+                    <TextBox  Background="Beige" Height="15.96" Text="{Binding FinResultReports[1]._2100, StringFormat={}{0:n0}}"/>
+                    <TextBox  Background="Beige" Height="15.96" Text="{Binding FinResultReports[1]._2210, StringFormat={}{0:n0}}"/>
+                    <TextBox  Background="Beige" Height="15.96" Text="{Binding FinResultReports[1]._2220, StringFormat={}{0:n0}}"/>
+                    <TextBox  Background="Beige" Height="15.96" Text="{Binding FinResultReports[1]._2200, StringFormat={}{0:n0}}"/>
+                    <TextBox  Background="Beige" Height="15.96" Text="{Binding FinResultReports[1]._2310, StringFormat={}{0:n0}}"/>
+                    <TextBox  Background="Beige" Height="15.96" Text="{Binding FinResultReports[1]._2320, StringFormat={}{0:n0}}"/>
+                    <TextBox  Background="Beige" Height="15.96" Text="{Binding FinResultReports[1]._2330, StringFormat={}{0:n0}}"/>
+                    <TextBox  Background="Beige" Height="15.96" Text="{Binding FinResultReports[1]._2340, StringFormat={}{0:n0}}"/>
+                    <TextBox  Background="Beige" Height="15.96" Text="{Binding FinResultReports[1]._2350, StringFormat={}{0:n0}}"/>
+                    <TextBox  Background="Beige" Height="15.96" Text="{Binding FinResultReports[1]._2300, StringFormat={}{0:n0}}"/>
+                    <TextBox  Background="Beige" Height="15.96" Text="{Binding FinResultReports[1]._2410, StringFormat={}{0:n0}}"/>
+                    <TextBox  Background="Beige" Height="15.96" Text="{Binding FinResultReports[1]._2421, StringFormat={}{0:n0}}"/>
+                    <TextBox  Background="Beige" Height="15.96" Text="{Binding FinResultReports[1]._2430, StringFormat={}{0:n0}}"/>
+                    <TextBox  Background="Beige" Height="15.96" Text="{Binding FinResultReports[1]._2450, StringFormat={}{0:n0}}"/>
+                    <TextBox  Background="Beige" Height="15.96" Text="{Binding FinResultReports[1]._2460, StringFormat={}{0:n0}}"/>
+                    <TextBox  Background="Beige" Height="15.96" Text="{Binding FinResultReports[1]._2400, StringFormat={}{0:n0}}"/>
+                </StackPanel>
+
+                <!-- ПредПредПоследний отчетный год -->
+
+                <StackPanel  Grid.Column="4" Margin="0,0,0,0" Grid.Row="2">
+                    <TextBlock 
+                        Text="Год:" 
+                        FontWeight="Bold"                       
+                        />
+                    <TextBlock 
+                        Text="{Binding FinResultReports[2].DateOfBalanse}" 
+                        FontWeight="Bold"   
+                          Height="18"                       
+                        />
+                </StackPanel>
+
+                <StackPanel Grid.Column="4" Grid.Row="3" Margin="0,0,0,0" Grid.RowSpan="2">
+                    <TextBox  Background="Beige" Height="15.96" Text="{Binding FinResultReports[2]._2110,StringFormat={}{0:n0}}"/>
+                    <TextBox  Background="Beige" Height="15.96" Text="{Binding FinResultReports[2]._2120, StringFormat={}{0:n0}}"/>
+                    <TextBox  Background="Beige" Height="15.96" Text="{Binding FinResultReports[2]._2100, StringFormat={}{0:n0}}"/>
+                    <TextBox  Background="Beige" Height="15.96" Text="{Binding FinResultReports[2]._2210, StringFormat={}{0:n0}}"/>
+                    <TextBox  Background="Beige" Height="15.96" Text="{Binding FinResultReports[2]._2220, StringFormat={}{0:n0}}"/>
+                    <TextBox  Background="Beige" Height="15.96" Text="{Binding FinResultReports[2]._2200, StringFormat={}{0:n0}}"/>
+                    <TextBox  Background="Beige" Height="15.96" Text="{Binding FinResultReports[2]._2310, StringFormat={}{0:n0}}"/>
+                    <TextBox  Background="Beige" Height="15.96" Text="{Binding FinResultReports[2]._2320, StringFormat={}{0:n0}}"/>
+                    <TextBox  Background="Beige" Height="15.96" Text="{Binding FinResultReports[2]._2330, StringFormat={}{0:n0}}"/>
+                    <TextBox  Background="Beige" Height="15.96" Text="{Binding FinResultReports[2]._2340, StringFormat={}{0:n0}}"/>
+                    <TextBox  Background="Beige" Height="15.96" Text="{Binding FinResultReports[2]._2350, StringFormat={}{0:n0}}"/>
+                    <TextBox  Background="Beige" Height="15.96" Text="{Binding FinResultReports[2]._2300, StringFormat={}{0:n0}}"/>
+                    <TextBox  Background="Beige" Height="15.96" Text="{Binding FinResultReports[2]._2410, StringFormat={}{0:n0}}"/>
+                    <TextBox  Background="Beige" Height="15.96" Text="{Binding FinResultReports[2]._2421, StringFormat={}{0:n0}}"/>
+                    <TextBox  Background="Beige" Height="15.96" Text="{Binding FinResultReports[2]._2430, StringFormat={}{0:n0}}"/>
+                    <TextBox  Background="Beige" Height="15.96" Text="{Binding FinResultReports[2]._2450, StringFormat={}{0:n0}}"/>
+                    <TextBox  Background="Beige" Height="15.96" Text="{Binding FinResultReports[2]._2460, StringFormat={}{0:n0}}"/>
+                    <TextBox  Background="Beige" Height="15.96" Text="{Binding FinResultReports[2]._2400, StringFormat={}{0:n0}}"/>
+                </StackPanel>
+
+
+
+
+
+
+
+            </Grid>
+
+        </Border>
     </Grid>
 </Window>
