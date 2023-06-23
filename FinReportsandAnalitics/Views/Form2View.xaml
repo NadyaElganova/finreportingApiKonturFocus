@@ -71,14 +71,14 @@
                 </Button.Style>
             </Button>
             <Button Grid.Column="2"
-                            Command="{Binding}"                            
+                            Command="{Binding ShowForm2ViewCommand}"                            
                             Content="Открыть"                            
                             FontSize="12"
                             FontFamily="Montserrat"
                             Cursor="Hand"
                             BorderThickness="0"
                             Foreground="White"
-                    VerticalAlignment="Top">
+                    VerticalAlignment="Top" >
                 <Button.Style>
                     <Style TargetType="Button">
                         <Setter Property="Background" Value="#773DFF"/>
@@ -339,24 +339,24 @@
                 </StackPanel>
 
                 <StackPanel Grid.Column="4" Grid.Row="3" Margin="0,0,0,0" Grid.RowSpan="2">
-                    <TextBox  Background="Transparent" Height="15.96" Text="{Binding FinResultReports[1]._2110,StringFormat={}{0:n0}}" Foreground="White"/>
-                    <TextBox  Background="Transparent" Height="15.96" Text="{Binding FinResultReports[1]._2120, StringFormat={}{0:n0}}" Foreground="White"/>
-                    <TextBox  Background="Transparent" Height="15.96" Text="{Binding FinResultReports[1]._2100, StringFormat={}{0:n0}}" Foreground="White"/>
-                    <TextBox  Background="Transparent" Height="15.96" Text="{Binding FinResultReports[1]._2210, StringFormat={}{0:n0}}" Foreground="White"/>
-                    <TextBox  Background="Transparent" Height="15.96" Text="{Binding FinResultReports[1]._2220, StringFormat={}{0:n0}}" Foreground="White"/>
-                    <TextBox  Background="Transparent" Height="15.96" Text="{Binding FinResultReports[1]._2200, StringFormat={}{0:n0}}" Foreground="White"/>
-                    <TextBox  Background="Transparent" Height="15.96" Text="{Binding FinResultReports[1]._2310, StringFormat={}{0:n0}}" Foreground="White"/>
-                    <TextBox  Background="Transparent" Height="15.96" Text="{Binding FinResultReports[1]._2320, StringFormat={}{0:n0}}" Foreground="White"/>
-                    <TextBox  Background="Transparent" Height="15.96" Text="{Binding FinResultReports[1]._2330, StringFormat={}{0:n0}}" Foreground="White"/>
-                    <TextBox  Background="Transparent" Height="15.96" Text="{Binding FinResultReports[1]._2340, StringFormat={}{0:n0}}" Foreground="White"/>
-                    <TextBox  Background="Transparent" Height="15.96" Text="{Binding FinResultReports[1]._2350, StringFormat={}{0:n0}}" Foreground="White"/>
-                    <TextBox  Background="Transparent" Height="15.96" Text="{Binding FinResultReports[1]._2300, StringFormat={}{0:n0}}" Foreground="White"/>
-                    <TextBox  Background="Transparent" Height="15.96" Text="{Binding FinResultReports[1]._2410, StringFormat={}{0:n0}}" Foreground="White"/>
-                    <TextBox  Background="Transparent" Height="15.96" Text="{Binding FinResultReports[1]._2421, StringFormat={}{0:n0}}" Foreground="White"/>
-                    <TextBox  Background="Transparent" Height="15.96" Text="{Binding FinResultReports[1]._2430, StringFormat={}{0:n0}}" Foreground="White"/>
-                    <TextBox  Background="Transparent" Height="15.96" Text="{Binding FinResultReports[1]._2450, StringFormat={}{0:n0}}" Foreground="White"/>
-                    <TextBox  Background="Transparent" Height="15.96" Text="{Binding FinResultReports[1]._2460, StringFormat={}{0:n0}}" Foreground="White"/>
-                    <TextBox  Background="Transparent" Height="15.96" Text="{Binding FinResultReports[1]._2400, StringFormat={}{0:n0}}" Foreground="White"/>
+                    <TextBox  Background="Transparent" Height="15.96" Text="{Binding FinResultReports[2]._2110,StringFormat={}{0:n0}}" Foreground="White"/>
+                    <TextBox  Background="Transparent" Height="15.96" Text="{Binding FinResultReports[2]._2120, StringFormat={}{0:n0}}" Foreground="White"/>
+                    <TextBox  Background="Transparent" Height="15.96" Text="{Binding FinResultReports[2]._2100, StringFormat={}{0:n0}}" Foreground="White"/>
+                    <TextBox  Background="Transparent" Height="15.96" Text="{Binding FinResultReports[2]._2210, StringFormat={}{0:n0}}" Foreground="White"/>
+                    <TextBox  Background="Transparent" Height="15.96" Text="{Binding FinResultReports[2]._2220, StringFormat={}{0:n0}}" Foreground="White"/>
+                    <TextBox  Background="Transparent" Height="15.96" Text="{Binding FinResultReports[2]._2200, StringFormat={}{0:n0}}" Foreground="White"/>
+                    <TextBox  Background="Transparent" Height="15.96" Text="{Binding FinResultReports[2]._2310, StringFormat={}{0:n0}}" Foreground="White"/>
+                    <TextBox  Background="Transparent" Height="15.96" Text="{Binding FinResultReports[2]._2320, StringFormat={}{0:n0}}" Foreground="White"/>
+                    <TextBox  Background="Transparent" Height="15.96" Text="{Binding FinResultReports[2]._2330, StringFormat={}{0:n0}}" Foreground="White"/>
+                    <TextBox  Background="Transparent" Height="15.96" Text="{Binding FinResultReports[2]._2340, StringFormat={}{0:n0}}" Foreground="White"/>
+                    <TextBox  Background="Transparent" Height="15.96" Text="{Binding FinResultReports[2]._2350, StringFormat={}{0:n0}}" Foreground="White"/>
+                    <TextBox  Background="Transparent" Height="15.96" Text="{Binding FinResultReports[2]._2300, StringFormat={}{0:n0}}" Foreground="White"/>
+                    <TextBox  Background="Transparent" Height="15.96" Text="{Binding FinResultReports[2]._2410, StringFormat={}{0:n0}}" Foreground="White"/>
+                    <TextBox  Background="Transparent" Height="15.96" Text="{Binding FinResultReports[2]._2421, StringFormat={}{0:n0}}" Foreground="White"/>
+                    <TextBox  Background="Transparent" Height="15.96" Text="{Binding FinResultReports[2]._2430, StringFormat={}{0:n0}}" Foreground="White"/>
+                    <TextBox  Background="Transparent" Height="15.96" Text="{Binding FinResultReports[2]._2450, StringFormat={}{0:n0}}" Foreground="White"/>
+                    <TextBox  Background="Transparent" Height="15.96" Text="{Binding FinResultReports[2]._2460, StringFormat={}{0:n0}}" Foreground="White"/>
+                    <TextBox  Background="Transparent" Height="15.96" Text="{Binding FinResultReports[2]._2400, StringFormat={}{0:n0}}" Foreground="White"/>
                 </StackPanel>
 
 

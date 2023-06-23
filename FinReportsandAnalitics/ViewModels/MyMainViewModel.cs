@@ -94,19 +94,26 @@ namespace FinReportsandAnalitics.ViewModels
         public ICommand ShowSearchViewCommand { get; }
         public ICommand ShowForm1ViewCommand { get; }
         public ICommand ShowForm2ViewCommand { get; }
-        
-        public ICommand OpenForm1ViewCommand { get; }
+        public ICommand ShowAnalViewCommand { get; }
+       
+       public ICommand OpenForm1ViewCommand { get; }
 
         public MyMainViewModel()
         {
             //Initialize commands
-            
+
+           
             ShowHomeViewCommand = new ViewModelCommand(ExecuteShowHomeViewCommand);
             ShowSearchViewCommand = new ViewModelCommand(ExecuteShowSearchViewCommand);
             ShowForm1ViewCommand = new ViewModelCommand(ExecuteShowForm1ViewCommand);
-            ShowForm2ViewCommand = new ViewModelCommand(ExecuteShowForm2ViewCommand);            
-            OpenForm1ViewCommand=new ViewModelCommand(ExecuteOpenForm1ViewCommand);
+
+            ShowForm2ViewCommand = new ViewModelCommand(ExecuteShowForm2ViewCommand);    
             
+            OpenForm1ViewCommand=new ViewModelCommand(ExecuteOpenForm1ViewCommand);
+
+           // ShowAnalViewCommand = new ViewModelCommand(ExecuteOpenForm1ViewCommand);
+             ShowAnalViewCommand = new ViewModelCommand(ExecuteShowAnalitcsViewCommand);
+
             //Default view
             ExecuteShowHomeViewCommand(null);
             
@@ -151,7 +158,15 @@ namespace FinReportsandAnalitics.ViewModels
 
         }
 
-        
-        
+        private void ExecuteShowAnalitcsViewCommand(object obj)
+        {
+            CurrentChildView = new AnaliticViewModel(Organization);
+            Caption = "Анализ";
+            Icon = IconChar.FileText;
+
+        }
+
+
+
     }
 }
